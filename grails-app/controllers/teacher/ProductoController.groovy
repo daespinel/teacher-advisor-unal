@@ -5,13 +5,11 @@ import org.springframework.dao.DataIntegrityViolationException
 class ProductoController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
-	/*
+	
     def index() {
         redirect(action: "list", params: params)
     }
-    */
-	
-	static scaffold = Producto
+
 	
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
