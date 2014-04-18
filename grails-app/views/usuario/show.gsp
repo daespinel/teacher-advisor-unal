@@ -23,56 +23,56 @@
 			</g:if>
 			<ol class="property-list usuario">
 			
-				<g:if test="${usuarioInstance?.userName}">
+				<g:if test="${usuarioInstance?.nombreUsuario}">
 				<li class="fieldcontain">
-					<span id="userName-label" class="property-label"><g:message code="usuario.userName.label" default="User Name" /></span>
+					<span id="nombreUsuario-label" class="property-label"><g:message code="usuario.nombreUsuario.label" default="Nombre Usuario" /></span>
 					
-						<span class="property-value" aria-labelledby="userName-label"><g:fieldValue bean="${usuarioInstance}" field="userName"/></span>
+						<span class="property-value" aria-labelledby="nombreUsuario-label"><g:fieldValue bean="${usuarioInstance}" field="nombreUsuario"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${usuarioInstance?.firstName}">
+				<g:if test="${usuarioInstance?.nombres}">
 				<li class="fieldcontain">
-					<span id="firstName-label" class="property-label"><g:message code="usuario.firstName.label" default="First Name" /></span>
+					<span id="nombres-label" class="property-label"><g:message code="usuario.nombres.label" default="Nombres" /></span>
 					
-						<span class="property-value" aria-labelledby="firstName-label"><g:fieldValue bean="${usuarioInstance}" field="firstName"/></span>
+						<span class="property-value" aria-labelledby="nombres-label"><g:fieldValue bean="${usuarioInstance}" field="nombres"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${usuarioInstance?.lastName}">
+				<g:if test="${usuarioInstance?.apellidos}">
 				<li class="fieldcontain">
-					<span id="lastName-label" class="property-label"><g:message code="usuario.lastName.label" default="Last Name" /></span>
+					<span id="apellidos-label" class="property-label"><g:message code="usuario.apellidos.label" default="Apellidos" /></span>
 					
-						<span class="property-value" aria-labelledby="lastName-label"><g:fieldValue bean="${usuarioInstance}" field="lastName"/></span>
+						<span class="property-value" aria-labelledby="apellidos-label"><g:fieldValue bean="${usuarioInstance}" field="apellidos"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${usuarioInstance?.email}">
+				<g:if test="${usuarioInstance?.correo}">
 				<li class="fieldcontain">
-					<span id="email-label" class="property-label"><g:message code="usuario.email.label" default="Email" /></span>
+					<span id="correo-label" class="property-label"><g:message code="usuario.correo.label" default="Correo" /></span>
 					
-						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${usuarioInstance}" field="email"/></span>
+						<span class="property-value" aria-labelledby="correo-label"><g:fieldValue bean="${usuarioInstance}" field="correo"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${usuarioInstance?.password}">
+				<g:if test="${usuarioInstance?.contrasena}">
 				<li class="fieldcontain">
-					<span id="password-label" class="property-label"><g:message code="usuario.password.label" default="Password" /></span>
+					<span id="contrasena-label" class="property-label"><g:message code="usuario.contrasena.label" default="Contrasena" /></span>
 					
-						<span class="property-value" aria-labelledby="password-label"><g:fieldValue bean="${usuarioInstance}" field="password"/></span>
+						<span class="property-value" aria-labelledby="contrasena-label"><g:fieldValue bean="${usuarioInstance}" field="contrasena"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${usuarioInstance?.signUpDate}">
+				<g:if test="${usuarioInstance?.fechaInscripcion}">
 				<li class="fieldcontain">
-					<span id="signUpDate-label" class="property-label"><g:message code="usuario.signUpDate.label" default="Sign Up Date" /></span>
+					<span id="fechaInscripcion-label" class="property-label"><g:message code="usuario.fechaInscripcion.label" default="Fecha Inscripcion" /></span>
 					
-						<span class="property-value" aria-labelledby="signUpDate-label"><g:formatDate date="${usuarioInstance?.signUpDate}" /></span>
+						<span class="property-value" aria-labelledby="fechaInscripcion-label"><g:formatDate date="${usuarioInstance?.fechaInscripcion}" /></span>
 					
 				</li>
 				</g:if>

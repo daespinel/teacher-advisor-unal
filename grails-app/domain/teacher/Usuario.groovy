@@ -4,12 +4,12 @@ class Usuario {
 	/***********************************Atributos de clase***********************************/
 	
 	/* Atributos dados por el Usuario*/
-	String firstName
-	String lastName
-	String userName
-	String password
-	String email
-	Date signUpDate
+	String nombres
+	String apellidos
+	String nombreUsuario
+	String contrasena
+	String correo
+	Date fechaInscripcion
 	
 	/*Atributos dados por la aplicacion*/
 	int reputacion 
@@ -21,12 +21,12 @@ class Usuario {
 	
 	/*************************************Restriciones****************************************/
     static constraints = {
-		userName(size:3..30,nullable: false,blank: false,unique: true)
-		firstName(size:3..30,nullable: false,blank: false)
-		lastName(size:3..30,nullable: false,blank: false)
-		email(email: true,nullable: false, blank: false)
-		password(size:6..15,nullable: false,blank: false,password: true)
-		signUpDate(nullable: false, blank: false)
+		nombreUsuario(size:3..30,nullable: false,blank: false,unique: true)
+		nombres(size:3..30,nullable: false,blank: false)
+		apellidos(size:3..30,nullable: false,blank: false)
+		correo(correo: true,nullable: false, blank: false)
+		contrasena(size:6..15,nullable: false,blank: false,contrasena: true)
+		fechaInscripcion(nullable: false, blank: false)
 		destacado(display: false)
 		censurado(display: false)
 		reputacion(display: false)
