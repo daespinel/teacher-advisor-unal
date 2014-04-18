@@ -24,17 +24,17 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="userName" title="${message(code: 'usuario.userName.label', default: 'User Name')}" />
+						<g:sortableColumn property="nombreUsuario" title="${message(code: 'usuario.nombreUsuario.label', default: 'Nombre Usuario')}" />
 					
-						<g:sortableColumn property="firstName" title="${message(code: 'usuario.firstName.label', default: 'First Name')}" />
+						<g:sortableColumn property="nombres" title="${message(code: 'usuario.nombres.label', default: 'Nombres')}" />
 					
-						<g:sortableColumn property="lastName" title="${message(code: 'usuario.lastName.label', default: 'Last Name')}" />
+						<g:sortableColumn property="apellidos" title="${message(code: 'usuario.apellidos.label', default: 'Apellidos')}" />
 					
-						<g:sortableColumn property="email" title="${message(code: 'usuario.email.label', default: 'Email')}" />
+						<g:sortableColumn property="correo" title="${message(code: 'usuario.correo.label', default: 'Correo')}" />
 					
-						<g:sortableColumn property="password" title="${message(code: 'usuario.password.label', default: 'Password')}" />
+						<g:sortableColumn property="contrasena" title="${message(code: 'usuario.contrasena.label', default: 'Contrasena')}" />
 					
-						<g:sortableColumn property="signUpDate" title="${message(code: 'usuario.signUpDate.label', default: 'Sign Up Date')}" />
+						<g:sortableColumn property="fechaInscripcion" title="${message(code: 'usuario.fechaInscripcion.label', default: 'Fecha Inscripcion')}" />
 					
 					</tr>
 				</thead>
@@ -42,17 +42,17 @@
 				<g:each in="${usuarioInstanceList}" status="i" var="usuarioInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${usuarioInstance.id}">${fieldValue(bean: usuarioInstance, field: "userName")}</g:link></td>
+						<td><g:link action="show" id="${usuarioInstance.id}">${fieldValue(bean: usuarioInstance, field: "nombreUsuario")}</g:link></td>
 					
-						<td>${fieldValue(bean: usuarioInstance, field: "firstName")}</td>
+						<td>${fieldValue(bean: usuarioInstance, field: "nombres")}</td>
 					
-						<td>${fieldValue(bean: usuarioInstance, field: "lastName")}</td>
+						<td>${fieldValue(bean: usuarioInstance, field: "apellidos")}</td>
 					
-						<td>${fieldValue(bean: usuarioInstance, field: "email")}</td>
+						<td>${fieldValue(bean: usuarioInstance, field: "correo")}</td>
 					
-						<td>${fieldValue(bean: usuarioInstance, field: "password")}</td>
+						<td>${fieldValue(bean: usuarioInstance, field: "contrasena")}</td>
 					
-						<td><g:formatDate date="${usuarioInstance.signUpDate}" /></td>
+						<td><g:formatDate date="${usuarioInstance.fechaInscripcion}" /></td>
 					
 					</tr>
 				</g:each>

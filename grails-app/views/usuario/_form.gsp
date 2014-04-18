@@ -2,52 +2,52 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'userName', 'error')} required">
-	<label for="userName">
-		<g:message code="usuario.userName.label" default="User Name" />
+<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'nombreUsuario', 'error')} required">
+	<label for="nombreUsuario">
+		<g:message code="usuario.nombreUsuario.label" default="Nombre Usuario" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="userName" maxlength="30" required="" value="${usuarioInstance?.userName}"/>
+	<g:textField name="nombreUsuario" maxlength="30" required="" value="${usuarioInstance?.nombreUsuario}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'firstName', 'error')} required">
-	<label for="firstName">
-		<g:message code="usuario.firstName.label" default="First Name" />
+<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'nombres', 'error')} required">
+	<label for="nombres">
+		<g:message code="usuario.nombres.label" default="Nombres" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="firstName" maxlength="30" required="" value="${usuarioInstance?.firstName}"/>
+	<g:textField name="nombres" maxlength="30" required="" value="${usuarioInstance?.nombres}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'lastName', 'error')} required">
-	<label for="lastName">
-		<g:message code="usuario.lastName.label" default="Last Name" />
+<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'apellidos', 'error')} required">
+	<label for="apellidos">
+		<g:message code="usuario.apellidos.label" default="Apellidos" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="lastName" maxlength="30" required="" value="${usuarioInstance?.lastName}"/>
+	<g:textField name="apellidos" maxlength="30" required="" value="${usuarioInstance?.apellidos}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'email', 'error')} required">
-	<label for="email">
-		<g:message code="usuario.email.label" default="Email" />
+<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'correo', 'error')} required">
+	<label for="correo">
+		<g:message code="usuario.correo.label" default="Correo" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field type="email" name="email" required="" value="${usuarioInstance?.email}"/>
+	<g:textField name="correo" required="" value="${usuarioInstance?.correo}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'password', 'error')} required">
-	<label for="password">
-		<g:message code="usuario.password.label" default="Password" />
+<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'contrasena', 'error')} required">
+	<label for="contrasena">
+		<g:message code="usuario.contrasena.label" default="Contrasena" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field type="password" name="password" maxlength="15" required="" value="${usuarioInstance?.password}"/>
+	<g:textField name="contrasena" maxlength="15" required="" value="${usuarioInstance?.contrasena}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'signUpDate', 'error')} required">
-	<label for="signUpDate">
-		<g:message code="usuario.signUpDate.label" default="Sign Up Date" />
+<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'fechaInscripcion', 'error')} required">
+	<label for="fechaInscripcion">
+		<g:message code="usuario.fechaInscripcion.label" default="Fecha Inscripcion" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:datePicker name="signUpDate" precision="day"  value="${usuarioInstance?.signUpDate}"  />
+	<g:datePicker name="fechaInscripcion" precision="day"  value="${usuarioInstance?.fechaInscripcion}"  />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'resenas', 'error')} ">
