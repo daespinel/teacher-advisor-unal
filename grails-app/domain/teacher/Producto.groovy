@@ -4,13 +4,13 @@ class Producto {
 	
 	String nombre
 	String caracteristica
-	
+	int calificacion
 	Servicio servicio
-	
 	static belongsTo = Servicio
+	static hasMany = [resenas:Resena]
 
     static constraints = {
-		nombre(blank:false)
+		nombre(size:5..99,nullable:false)
 		caracteristica(maxSize:1000,nullable:true)
 		
     }
