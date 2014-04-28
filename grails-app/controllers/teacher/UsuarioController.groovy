@@ -3,10 +3,25 @@ package teacher
 import org.springframework.dao.DataIntegrityViolationException
 
 class UsuarioController {
+	def entrarService
+	def salirService
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
-    def index() {
+    //accion para login//
+	def entrar(){
+		def usuario=entrarService.controlarEntrada(params)
+		
+		if(!usuario){
+			flash.message = "Usuario o contraseña incorrecta para: ${params.nombreUsuario}"
+		}else{
+			session.usuario = usuario 
+			//redireccionar a pagina home!!
+			render "exito al entrar yeahh baby"
+		}
+	}
+	
+	def index() {
         redirect(action: "list", params: params)
     }
 
