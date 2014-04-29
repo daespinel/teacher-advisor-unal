@@ -18,11 +18,15 @@ class UsuarioController {
     def create() {
         [usuarioInstance: new Usuario(params)]
     }
+	
+	def register() {
+		[usuarioInstance: new Usuario(params)]
+	}
 
     def save() {
         def usuarioInstance = new Usuario(params)
         if (!usuarioInstance.save(flush: true)) {
-            render(view: "create", model: [usuarioInstance: usuarioInstance])
+            render(view: "register", model: [usuarioInstance: usuarioInstance])
             return
         }
 

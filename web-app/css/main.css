@@ -184,7 +184,7 @@ img {
 	text-decoration: underline;
 }
 
-.nav a.home, .nav a.list, .nav a.create {
+.nav a.home, .nav a.list, .nav a.create, .nav a.register {
 	background-position: 0.7em center;
 	background-repeat: no-repeat;
 	text-indent: 25px;
@@ -199,6 +199,10 @@ img {
 }
 
 .nav a.create {
+	background-image: url(../images/skin/database_add.png);
+}
+
+.nav a.register {
 	background-image: url(../images/skin/database_add.png);
 }
 
