@@ -1,0 +1,146 @@
+body {
+	background-color: #FFFFFF;
+	display: block;
+	height: 100%;
+}
+
+#body {
+	margin: 0 auto;
+	width: 1150px;
+	background-color: #D8D8D8;
+}
+
+#news {
+	color: #FFFFFF;
+	width: 100%;
+	height: 180px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: inline-flex;
+}
+
+.news {
+	background-color: #317385;
+	width: 30%;
+	height: 100%;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#footer {
+	text-align: center;
+	height: 85px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#container {
+	width: 100%;
+	display: inline-flex;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	height: 190px;
+}
+
+#search {
+	width: 100%;
+	display: inline-flex;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:20px;
+	margin-bottom:20px;
+	height:40px;
+}
+
+#searchFields {
+	width: 70%;
+	display: inline-flex;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#searchButton {
+	width: 10%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#logo {
+	width: 40%;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#description {
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align:center;
+	line-height:2em;
+}
+
+#textoBusqueda {
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align:center;
+}
+
+#tipoBusqueda {
+	width: 20%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#toplinks {
+	width: 100%;
+	float: right;
+	background-color: #585858;
+}
+#toplinks a{
+	display: block;
+	color:#FFFFFF;
+	width: 186px;
+	height: 50px;
+	text-align: center;
+	line-height: 3em;
+}
+#toplinks a:hover{
+	background-color: #DBA901;
+}
+
+.loginLink {
+	float: right;
+}
+
+#myAds {
+	background-color:#5096BA;
+	height: 170px;
+	margin: 20px;
+}
+
+a {
+	text-decoration: none;
+}
+
+#topmenu {
+	display: -webkit-inline-box;
+	margin: 20px;
+	background-color: #585858;
+}
+
+#topmenu a {
+	display: block;
+	color:#FFFFFF;
+	width: 186px;
+	height: 50px;
+	text-align: center;
+	line-height: 3em;
+}
+
+#topmenu a:hover{
+	background-color: #DBA901;
+}
