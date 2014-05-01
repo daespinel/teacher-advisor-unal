@@ -1,7 +1,7 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css"
-	href="<g:resource dir='css' file='main.css' />" />
+	href="<g:resource dir='css' file='index.css' />" />
 </head>
 <body>
 	<div id="body">
