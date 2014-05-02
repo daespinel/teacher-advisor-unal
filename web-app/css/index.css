@@ -35,6 +35,10 @@ body {
 	margin-bottom: 20px;
 }
 
+#maincontent{
+	margin:25px;
+	
+}
 #container {
 	width: 100%;
 	display: inline-flex;
@@ -94,13 +98,38 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
-
-#toplinks {
-	width: 100%;
-	float: right;
+#usernameLabel{
+	height: 50px;
 	background-color: #585858;
+	display: block;
+	color:#FFFFFF;
+	width: 186px;
+	text-align: center;
+	line-height: 3em;
+	float:right;
+}
+#toplinks {
+	height: 50px;
+	background-color: #585858;
+	
+}
+
+.groupFields{
+	margin: 0 auto;
+	width: 200px;
+	
+	text-align: center;
+	background-color: #5096BA;
+	color: white;
+	font-family: arial;
+}
+.groupFields#register{
+	width:300px;
+	
+	
 }
 #toplinks a{
+	
 	display: block;
 	color:#FFFFFF;
 	width: 186px;
@@ -115,10 +144,14 @@ body {
 .loginLink {
 	float: right;
 }
+#inicio{
+	float:left;
+	
+}
 
 #myAds {
 	background-color:#5096BA;
-	height: 170px;
+	height: 140px;
 	margin: 20px;
 }
 
@@ -144,3 +177,18 @@ a {
 #topmenu a:hover{
 	background-color: #DBA901;
 }
+
+.message {
+	font-size: 0.8em;
+	line-height: 2;
+	margin: 1em 2em;
+	padding: 0.25em;
+}
+
+.message {
+	background: #f3f3ff;
+	border: 1px solid #b2d1ff;
+	color: #006dba;
+	   -moz-box-shadow: 0 0 0.25em #b2d1ff;
+	-webkit-box-shadow: 0 0 0.25em #b2d1ff;
+	        box-shadow: 0 0 0.25em #b2d1ff;
