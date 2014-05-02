@@ -25,7 +25,7 @@ class Usuario {
 		nombres(size:3..30,nullable: false,blank: false)
 		apellidos(size:3..30,nullable: false,blank: false)
 		correo(correo: true,nullable: false, blank: false)
-		contrasena(size:6..15,nullable: false,blank: false,contrasena: true)
+		contrasena(size:6..50,nullable: false,blank: false,contrasena: true)
 		fechaInscripcion(nullable: false, blank: false)
 		destacado(display: false)
 		censurado(display: false)

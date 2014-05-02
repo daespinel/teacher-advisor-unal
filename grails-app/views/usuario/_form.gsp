@@ -42,12 +42,5 @@
 	<g:passwordField name="contrasena" maxlength="15" required="" value="${usuarioInstance?.contrasena}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'fechaInscripcion', 'error')} required">
-	<label for="fechaInscripcion">
-		<g:message code="usuario.fechaInscripcion.label" default="Fecha Inscripcion" />
-		<span class="required-indicator">*</span>
-	</label><br>
-	<g:datePicker name="fechaInscripcion" precision="day"  value="${usuarioInstance?.fechaInscripcion}"  />
-</div>
 
 
