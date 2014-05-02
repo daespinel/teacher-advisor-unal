@@ -48,6 +48,8 @@ class UsuarioController {
 	}
 
 	def save() {
+		params.contrasena = params.contrasena.encodeAsMD5()
+		params.fechaInscripcion = new Date()
 		def usuarioInstance = new Usuario(params)
 		if (!usuarioInstance.save(flush: true)) {
 			render(view: "register", model: [usuarioInstance: usuarioInstance])

@@ -8,7 +8,7 @@ class AccessService {
 		if (!usuario) {
 			return
 		} else {
-			if(usuario.contrasena==params.contrasena){
+			if(usuario.contrasena==params.contrasena.encodeAsMD5()){
 				return usuario
 			}
 		}
