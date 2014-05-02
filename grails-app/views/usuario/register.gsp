@@ -1,39 +1,40 @@
-<%@ page import="teacher.Usuario" %>
-<!DOCTYPE html>
 <html>
-	<head>
-		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'usuario.label', default: 'Usuario')}" />
-		<title><g:message code="default.register.label" args="[entityName]" /></title>
-	</head>
-	<body>
-		<a href="#register-usuario" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
-		<div id="register-usuario" class="content scaffold-register" role="main">
-			<h1><g:message code="default.create.label" args="[entityName]" /></h1>
+<head>
+<link rel="stylesheet" type="text/css"
+	href="${resource(dir: 'css', file: 'index.css')}" />
+<script src="${resource(dir: 'js', file: 'jquery-2.1.0.min.js')}"></script>
+<script src="${resource(dir: 'js', file: 'index.js')}"></script>
+<title>${message(code:'default.register')}</title>
+</head>
+<body>
+	<div class="body" id="body">
+		<g:render template="/topbar" />
+		<div class="content" id="maincontent">
+
+			<h1>
+				${message(code:'default.register')}
+			</h1>
 			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
+				<div class="message" role="status">
+					${flash.message}
+				</div>
 			</g:if>
-			<g:hasErrors bean="${usuarioInstance}">
-			<ul class="errors" role="alert">
-				<g:eachError bean="${usuarioInstance}" var="error">
-				<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
-				</g:eachError>
-			</ul>
-			</g:hasErrors>
-			<g:form action="save" >
-				<fieldset class="form">
-					<g:render template="form"/>
-				</fieldset>
-				<fieldset class="buttons">
-					<g:submitButton name="register" class="save" value="${message(code: 'default.button.register.label', default: 'Registrar')}" />
-				</fieldset>
-			</g:form>
+			
+			<div class="groupFields" id="register">
+				<g:form action="save">
+					<fieldset class="form">
+						<g:render template="form" />
+					</fieldset>
+					<fieldset class="buttons">
+						<g:submitButton name="register" class="save"
+							value="${message(code: 'default.button.register.label', default: 'Registrar')}" />
+					</fieldset>
+				</g:form>
+			</div>
+
+
+			<g:render template="/footer" />
 		</div>
-	</body>
+	</div>
+</body>
 </html>
