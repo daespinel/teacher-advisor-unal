@@ -1,6 +1,11 @@
-<div class="toplinks" id="toplinks">
-	<a href="/Teacher" id="inicio"> ${message(code:'default.inicio')}
-	</a>
+<div class="header" id="toplinks">
+	<div id="logoHeader">
+		<a href="/Teacher" id="inicio"><img
+			src="<g:resource dir='images' file='logo.png' />" width="100%"
+			height="100%" /> </a>
+
+	</div>
+
 	<g:if test="${session.usuario}">
 
 		<a href="/Teacher/usuario/salir" class="loginLink" id="logoutLink">

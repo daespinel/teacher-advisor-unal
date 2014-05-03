@@ -17,20 +17,20 @@
 					${flash.message}
 				</div>
 			</g:if>
-			<p>Bienvenido a Teacher Advisor</p>
+			<h1>Bienvenido a Teacher Advisor</h1>
 			<!-- entrada de usuarios -->
 			<div class="groupFields">
 				<g:form action="entrar" method="post">
-					<p>
+					<fieldset>
 						Nombre de Usuario:
-						<g:textField name="nombreUsuario" placeholder="Nombre de Usuario" />
+						<g:textField name="nombreUsuario" required value placeholder="Nombre de Usuario"  />
 						<br> Contraseña:
-						<g:passwordField name="contrasena" placeholder="Contraseña" />
+						<g:passwordField name="contrasena" required value placeholder="Contraseña"  />
 						<g:hiddenField name="load" value="true"/>
-					</p>
-					<p>
+					</fieldset>
+					<fieldset>
 						<g:actionSubmit value="Entrar" action="entrar" />
-					</p>
+					</fieldset>
 				</g:form>
 			</div>
 		</div>
