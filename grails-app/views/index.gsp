@@ -18,8 +18,8 @@
 		<div class="content" id="maincontent">
 			<div id="container">
 				<div class="logo" id="logo">
-					<img src="<g:resource dir='images' file='logo.png' />" width="100%"
-						height="100%" />
+					<img src="<g:resource dir='images/new' file='logo.png' />"
+						width="100%" height="100%" />
 				</div>
 				<div class="description" id="description">
 					${message(code:'default.description')}
@@ -45,9 +45,9 @@
 				<div class="news" id="RightNews">Contenido Interesante 1</div>
 
 			</div>
-
+			<g:render template="/footer" />
 		</div>
-		<g:render template="/footer" />
+
 	</div>
 </body>
 </html>

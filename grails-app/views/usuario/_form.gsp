@@ -40,6 +40,7 @@
 		<span class="required-indicator">*</span>
 	</label><br>
 	<g:passwordField name="contrasena" maxlength="15" required="" value="${usuarioInstance?.contrasena}"/>
+	
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'contrasena2', 'error')} required">
