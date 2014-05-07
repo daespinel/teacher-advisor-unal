@@ -11,7 +11,7 @@ class Usuario {
 	String correo
 	Date fechaInscripcion
 	
-	/*Atributos dados por la aplicacion*/
+	/*Atributos dados por la aplicación*/
 	int reputacion 
 	boolean destacado
 	boolean censurado
