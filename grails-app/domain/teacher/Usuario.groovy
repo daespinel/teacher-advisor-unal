@@ -26,8 +26,8 @@ class Usuario {
 	/*************************************Restriciones****************************************/
     static constraints = {
 		nombreUsuario(size:3..30,nullable: false,blank: false,unique: true,matches: "[a-zA-Z]([0-9]|[a-zA-Z]|[\\_])+")
-		nombres(size:3..30,nullable: false,blank: false)
-		apellidos(size:3..30,nullable: false,blank: false)
+		nombres(size:3..30,nullable: false,blank: false,matches: "([a-zA-Z]|\\s)+")
+		apellidos(size:3..30,nullable: false,blank: false,matches: "([a-zA-Z]|\\s)+")
 		correo(correo: true,nullable: false, blank: false, matches:"[a-z]+@unal.edu.co")
 		contrasena(size:6..50,nullable: false,blank: false,contrasena: true)
 		fechaInscripcion(nullable: false, blank: false)
