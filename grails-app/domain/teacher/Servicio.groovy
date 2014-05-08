@@ -13,4 +13,9 @@ class Servicio {
 		descripcion(size:10..100,nullable:true)
 		tipo(nullable:false,size:5..30)
 	}
+	
+	String toString(){
+		nombre
+		
+	}
 }

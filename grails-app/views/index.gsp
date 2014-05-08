@@ -18,11 +18,12 @@
 		<div class="content" id="maincontent">
 			<div id="container">
 				<div class="logo" id="logo">
-					<img src="<g:resource dir='images/new' file='logo.png' />"
-						width="100%" height="100%" />
+					<img id="logoImage" src="<g:resource dir='images/new' file='logo.png' />" />
 				</div>
 				<div class="description" id="description">
-					${message(code:'default.description')}
+					<li>${message(code:'default.description.0')}</li>
+					<li>${message(code:'default.description.1')}</li>
+					<li>${message(code:'default.description.2')}</li>
 				</div>
 			</div>
 			<div id="search">

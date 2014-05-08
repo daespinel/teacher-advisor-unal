@@ -4,99 +4,140 @@ import org.springframework.dao.DataIntegrityViolationException
 
 class ResenaController {
 
-    static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+	static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
-    def index() {
-        redirect(action: "list", params: params)
-    }
+	def index() {
+		redirect(action: "list", params: params)
+	}
 
-    def list(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        [resenaInstanceList: Resena.list(params), resenaInstanceTotal: Resena.count()]
-    }
+	def list(Integer max) {
+		params.max = Math.min(max ?: 10, 100)
+		[resenaInstanceList: Resena.list(params), resenaInstanceTotal: Resena.count()]
+	}
 
-    def create() {
-        [resenaInstance: new Resena(params)]
-    }
+	def create(session) {
+		[resenaInstance: new Resena(params),params:params]
+		render(view:'nueva')
+	}
 
-    def save() {
-        def resenaInstance = new Resena(params)
-        if (!resenaInstance.save(flush: true)) {
-            render(view: "create", model: [resenaInstance: resenaInstance])
-            return
-        }
+	def crearResena(){
+		params.usuario = session.usuario
+		save()
+	}
 
-        flash.message = message(code: 'default.created.message', args: [message(code: 'resena.label', default: 'Resena'), resenaInstance.id])
-        redirect(action: "show", id: resenaInstance.id)
-    }
+	def ver(){
+		Usuario userInstance = Usuario.get(session.usuario.id)
+		if(userInstance.resenas.size()>0){
+			[resenas:userInstance.resenas]
+		}else{
+			flash.message=message(code:"error.resenas.0")
+		}
+		
+	}
 
-    def show(Long id) {
-        def resenaInstance = Resena.get(id)
-        if (!resenaInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'resena.label', default: 'Resena'), id])
-            redirect(action: "list")
-            return
-        }
+	def save() {
+		def resenaInstance = new Resena(params)
+		if (!resenaInstance.save(flush: true)) {
+			render(view: "create", model: [resenaInstance: resenaInstance])
+			return
+		}
 
-        [resenaInstance: resenaInstance]
-    }
+		flash.message = message(code: 'default.created.message', args: [
+			message(code: 'resena.label', default: 'Resena'),
+			resenaInstance.id
+		])
+		redirect(action: "show", id: resenaInstance.id)
+	}
 
-    def edit(Long id) {
-        def resenaInstance = Resena.get(id)
-        if (!resenaInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'resena.label', default: 'Resena'), id])
-            redirect(action: "list")
-            return
-        }
+	def show(Long id) {
+		def resenaInstance = Resena.get(id)
+		if (!resenaInstance) {
+			flash.message = message(code: 'default.not.found.message', args: [
+				message(code: 'resena.label', default: 'Resena'),
+				id
+			])
+			redirect(action: "list")
+			return
+		}
 
-        [resenaInstance: resenaInstance]
-    }
+		[resenaInstance: resenaInstance]
+	}
 
-    def update(Long id, Long version) {
-        def resenaInstance = Resena.get(id)
-        if (!resenaInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'resena.label', default: 'Resena'), id])
-            redirect(action: "list")
-            return
-        }
+	def edit(Long id) {
+		def resenaInstance = Resena.get(id)
+		if (!resenaInstance) {
+			flash.message = message(code: 'default.not.found.message', args: [
+				message(code: 'resena.label', default: 'Resena'),
+				id
+			])
+			redirect(action: "list")
+			return
+		}
 
-        if (version != null) {
-            if (resenaInstance.version > version) {
-                resenaInstance.errors.rejectValue("version", "default.optimistic.locking.failure",
-                          [message(code: 'resena.label', default: 'Resena')] as Object[],
-                          "Another user has updated this Resena while you were editing")
-                render(view: "edit", model: [resenaInstance: resenaInstance])
-                return
-            }
-        }
+		[resenaInstance: resenaInstance]
+	}
 
-        resenaInstance.properties = params
+	def update(Long id, Long version) {
+		def resenaInstance = Resena.get(id)
+		if (!resenaInstance) {
+			flash.message = message(code: 'default.not.found.message', args: [
+				message(code: 'resena.label', default: 'Resena'),
+				id
+			])
+			redirect(action: "list")
+			return
+		}
 
-        if (!resenaInstance.save(flush: true)) {
-            render(view: "edit", model: [resenaInstance: resenaInstance])
-            return
-        }
+		if (version != null) {
+			if (resenaInstance.version > version) {
+				resenaInstance.errors.rejectValue("version", "default.optimistic.locking.failure",
+						[
+							message(code: 'resena.label', default: 'Resena')] as Object[],
+						"Another user has updated this Resena while you were editing")
+				render(view: "edit", model: [resenaInstance: resenaInstance])
+				return
+			}
+		}
 
-        flash.message = message(code: 'default.updated.message', args: [message(code: 'resena.label', default: 'Resena'), resenaInstance.id])
-        redirect(action: "show", id: resenaInstance.id)
-    }
+		resenaInstance.properties = params
 
-    def delete(Long id) {
-        def resenaInstance = Resena.get(id)
-        if (!resenaInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'resena.label', default: 'Resena'), id])
-            redirect(action: "list")
-            return
-        }
+		if (!resenaInstance.save(flush: true)) {
+			render(view: "edit", model: [resenaInstance: resenaInstance])
+			return
+		}
 
-        try {
-            resenaInstance.delete(flush: true)
-            flash.message = message(code: 'default.deleted.message', args: [message(code: 'resena.label', default: 'Resena'), id])
-            redirect(action: "list")
-        }
-        catch (DataIntegrityViolationException e) {
-            flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'resena.label', default: 'Resena'), id])
-            redirect(action: "show", id: id)
-        }
-    }
+		flash.message = message(code: 'default.updated.message', args: [
+			message(code: 'resena.label', default: 'Resena'),
+			resenaInstance.id
+		])
+		redirect(action: "show", id: resenaInstance.id)
+	}
+
+	def delete(Long id) {
+		def resenaInstance = Resena.get(id)
+		if (!resenaInstance) {
+			flash.message = message(code: 'default.not.found.message', args: [
+				message(code: 'resena.label', default: 'Resena'),
+				id
+			])
+			redirect(action: "list")
+			return
+		}
+
+		try {
+			resenaInstance.delete(flush: true)
+			flash.message = message(code: 'default.deleted.message', args: [
+				message(code: 'resena.label', default: 'Resena'),
+				id
+			])
+			redirect(action: "list")
+		}
+		catch (DataIntegrityViolationException e) {
+			flash.message = message(code: 'default.not.deleted.message', args: [
+				message(code: 'resena.label', default: 'Resena'),
+				id
+			])
+			redirect(action: "show", id: id)
+		}
+	}
 }

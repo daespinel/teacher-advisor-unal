@@ -1,5 +1,6 @@
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <link rel="stylesheet" type="text/css"
 	href="${resource(dir: 'css', file: 'index.css')}" />
 <link rel="stylesheet" type="text/css"
@@ -16,27 +17,25 @@
 	<div class="body" id="body">
 		<g:render template="/topbar" />
 		<div class="content" id="maincontent">
+
 			<g:if test="${flash.message}">
-				<div class="errors">
-					<li>${flash.message}</li>
+				<div class="message" role="status">
+					${
+						flash.message
+					}
 					${flash.message = '' }
 				</div>
 			</g:if>
-
-			<!-- entrada de usuarios -->
-			<div class="groupFields">
-				<header class="header">Entrar</header>
-				<g:form action="entrar" method="post">
-					<fieldset class="form">
-						Nombre de Usuario:
-						<g:textField name="nombreUsuario" required value placeholder="Nombre de Usuario" />
-						<br> Contraseña:
-						<g:passwordField name="contrasena" required value placeholder="Contraseña" />
-						<g:hiddenField name="load" value="true" />
-						<g:actionSubmit value="Entrar" action="entrar" />
-					</fieldset>
-				</g:form>
-			</div>
+			<header class="header" id="verResena">Mis Reseñas</header>
+			<g:each in="${resenas}" var="resena">
+				<div class="resenaVer" id="${session.usuario}-${resena.id}">
+					<span>
+						${message(code:'asdas.asd',default:'Titulo') }
+					</span> <span>
+						${resena.titulo}
+					</span>
+				</div>
+			</g:each>
 			<g:render template="/footer" />
 		</div>
 	</div>
