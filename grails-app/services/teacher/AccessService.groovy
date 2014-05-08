@@ -3,7 +3,7 @@ package teacher
 class AccessService {
 	//metodo encargado de manejar el acceso de un usuario
 	Usuario controlarEntrada(params) {
-		def usuario=Usuario.findByNombreUsuario(params.nombreUsuario);
+		def usuario=Usuario.findByNombreUsuario(params.nombreUsuario)
 		//comprobar si el usuario existe//
 		if (!usuario) {
 			return

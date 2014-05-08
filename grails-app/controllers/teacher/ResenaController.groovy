@@ -46,7 +46,7 @@ class ResenaController {
 			message(code: 'resena.label', default: 'Resena'),
 			resenaInstance.id
 		])
-		redirect(action: "show", id: resenaInstance.id)
+		redirect(action: "ver", id: resenaInstance.id)
 	}
 
 	def show(Long id) {

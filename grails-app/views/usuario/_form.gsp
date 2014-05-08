@@ -36,7 +36,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'contrasena', 'error')} required">
 	<label for="contrasena">
-		<g:message code="usuario.contrasena.label" default="Contrasena" />
+		<g:message code="usuario.contrasena.label" default="Contraseña" />
 		<span class="required-indicator">*</span>
 	</label><br>
 	<g:passwordField name="contrasena" maxlength="15" required="" value="${usuarioInstance?.contrasena}"/>
@@ -45,7 +45,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'contrasena2', 'error')} required">
 	<label for="contrasena2">
-		<g:message code="usuario.contrasena.label" default="Repetir Contrasena" />
+		<g:message code="usuario.contrasena.label" default="Repetir Contraseña" />
 		<span class="required-indicator">*</span>
 	</label><br>
 	<g:passwordField name="contrasena2" maxlength="15" required="" value="${usuarioInstance?.contrasena}"/>

@@ -48,6 +48,7 @@ class UsuarioController {
 	}
 
 	def save() {
+		def contrasenaOrig = params.contrasena
 		params.contrasena = params.contrasena.encodeAsMD5()
 		params.fechaInscripcion = new Date()
 		def usuarioInstance = new Usuario(params)
@@ -60,7 +61,11 @@ class UsuarioController {
 			message(code: 'usuario.label', default: 'Usuario'),
 			usuarioInstance.id
 		])
-		redirect(action: "show", id: usuarioInstance.id)
+		
+		params.load=true
+		params.contrasena=contrasenaOrig
+		params.nombreUsuario=usuarioInstance.nombreUsuario
+		redirect(action: "entrar",params:params)
 	}
 
 	def show(Long id) {

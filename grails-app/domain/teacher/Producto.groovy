@@ -6,7 +6,7 @@ class Producto {
 	String caracteristica
 	int calificacion
 	Servicio servicio
-	static belongsTo = Servicio
+	static belongsTo = [servicio:Servicio]
 	static hasMany = [resenas:Resena]
 
     static constraints = {
