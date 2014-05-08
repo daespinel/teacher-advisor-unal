@@ -19,6 +19,10 @@ class Usuario {
 	/*Relacion Usuario-Reseñas*/
 	static hasMany=[resenas:Resena]
 	
+	public Usuario(){
+		resenas = new ArrayList()
+	}
+	
 	/*************************************Restriciones****************************************/
     static constraints = {
 		nombreUsuario(size:3..30,nullable: false,blank: false,unique: true,matches: "[a-zA-Z]([0-9]|[a-zA-Z]|[\\_])+")
@@ -31,4 +35,8 @@ class Usuario {
 		censurado(display: false)
 		reputacion(display: false)
     }
+	
+	String toString(){
+		nombres+" "+apellidos
+	}
 }

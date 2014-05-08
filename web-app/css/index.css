@@ -46,7 +46,7 @@ body {
 	display: inline-flex;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	height: 190px;
+	height: 256px;
 }
 
 #search {
@@ -73,11 +73,12 @@ body {
 }
 
 #logo {
-	width: 40%;
-	height: 100%;
+	width: 444px;
+	height: 256px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-left: auto;
+	margin-left: 40px;
+	padding-top: 20px;
 }
 
 #description {
@@ -86,6 +87,13 @@ body {
 	margin-right: auto;
 	text-align: center;
 	line-height: 2em;
+	font-family: arial;
+	font-style: italic;
+	color: white;
+	background-color: AEABAB;
+	border-radius: 40px;
+	padding: 0px 24px;
+	height: 256px;
 }
 
 #textoBusqueda {
@@ -106,7 +114,7 @@ body {
 	/* background-color: #585858; */
 	display: block;
 	color: #FFFFFF;
-	width: 186px;
+	/* width: 186px; */
 	text-align: center;
 	line-height: 2em;
 	font-family: arial;
@@ -255,4 +263,82 @@ div#footer {
     border-top: solid;
     border-top-width: thin;
     border-top-style: dashed;
+}
+
+.groupFields#crearResena {
+    width: 380px;
+}
+header#crearResena {
+    margin-left: 92px;
+}
+div.resenaVer {
+    background-color: #5096A2;
+    color: lavender;
+    font-family: arial;
+    font-size: larger;
+    margin: 20px 20px;
+    padding: 4px;
+}
+header#verResena {
+    margin-left: inherit;
+}
+
+
+
+
+
+.description li {
+    list-style: none;
+}
+
+img#logoImage {
+    width: 100%;
+    height: 219px;
+}
+
+
+
+/* MESSAGES AND ERRORS */
+
+.errors,
+.message {
+	font-size: 0.8em;
+	line-height: 2;
+	margin: 1em 2em;
+	padding: 0.25em;
+}
+
+.message {
+	background: #f3f3ff;
+	border: 1px solid #b2d1ff;
+	color: #006dba;
+	   -moz-box-shadow: 0 0 0.25em #b2d1ff;
+	-webkit-box-shadow: 0 0 0.25em #b2d1ff;
+	        box-shadow: 0 0 0.25em #b2d1ff;
+}
+
+.errors {
+	background: #fff3f3;
+	border: 1px solid #ffaaaa;
+	color: #cc0000;
+	   -moz-box-shadow: 0 0 0.25em #ff8888;
+	-webkit-box-shadow: 0 0 0.25em #ff8888;
+	        box-shadow: 0 0 0.25em #ff8888;
+}
+
+.errors ul,
+.message {
+	padding: 0;
+}
+
+.errors li {
+	list-style: none;
+	background: transparent url(../images/skin/exclamation.png) 0.5em 50% no-repeat;
+	text-indent: 2.2em;
+}
+
+.message {
+	background: transparent url(../images/skin/information.png) 0.5em 50% no-repeat;
+	background-color: aliceblue;
+	text-indent: 2.2em;
 }
