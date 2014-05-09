@@ -51,33 +51,39 @@ class UsuarioController {
 		def contrasenaOrig = params.contrasena
 		params.fechaInscripcion = new Date()
 		if(contrasenaOrig == params.contrasena2){
-		if(params.contrasena ==~ /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])([a-zA-Z0-9]+)/){
-			
-			params.contrasena = params.contrasena.encodeAsMD5()
-			
-			def usuarioInstance = new Usuario(params)
-			
-			if (!usuarioInstance.save(flush: true)) {
-				usuarioInstance.contrasena = contrasenaOrig
-				render(view: "register", model: [usuarioInstance: usuarioInstance])
+			if(params.contrasena ==~ /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])([a-zA-Z0-9]+)/){
+
+				params.contrasena = params.contrasena.encodeAsMD5()
+
+				def usuarioInstance = new Usuario(params)
+
+				if (!usuarioInstance.save(flush: true)) {
+					usuarioInstance.contrasena = contrasenaOrig
+					render(view: "register", model: [usuarioInstance: usuarioInstance])
+					return
+				}
+
+				flash.message = message(code: 'default.created.message', args: [
+					message(code: 'usuario.label', default: 'Usuario'),
+					usuarioInstance.id
+				])
+
+				params.load=true
+				params.contrasena=contrasenaOrig
+				params.nombreUsuario=usuarioInstance.nombreUsuario
+				redirect(action: "entrar",params:params)
+
+			}else{
+				flash.message=message(code:'error.formato.contrasena')
+				render(view: "register")
 				return
 			}
-			
-			flash.message = message(code: 'default.created.message', args: [
-				message(code: 'usuario.label', default: 'Usuario'),
-				usuarioInstance.id
-			])
-
-			params.load=true
-			params.contrasena=contrasenaOrig
-			params.nombreUsuario=usuarioInstance.nombreUsuario
-			redirect(action: "entrar",params:params)
+		}else{
 			flash.message=message(code:'error.verificacion.contrasena')
 			render(view: "register")
 			return
 		}
-		}
-		
+
 	}
 
 	def show(Long id) {
