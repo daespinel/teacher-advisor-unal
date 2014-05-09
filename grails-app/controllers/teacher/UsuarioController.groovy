@@ -78,25 +78,6 @@ class UsuarioController {
 			return
 		}
 		
-		/*params.fechaInscripcion = new Date()
-		params.contrasena = params.contrasena.encodeAsMD5()
-		
-		def usuarioInstance = new Usuario(params)
-		
-		if (!usuarioInstance.save(flush: true)) {
-			render(view: "register", model: [usuarioInstance: usuarioInstance])
-			return
-		}
-		
-		flash.message = message(code: 'default.created.message', args: [
-			message(code: 'usuario.label', default: 'Usuario'),
-			usuarioInstance.id
-		])
-		
-		params.load=true
-		params.contrasena=contrasenaOrig
-		params.nombreUsuario=usuarioInstance.nombreUsuario
-		redirect(action: "entrar",params:params)*/
 	}
 
 	def show(Long id) {
