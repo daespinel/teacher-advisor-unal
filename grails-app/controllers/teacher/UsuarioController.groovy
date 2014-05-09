@@ -49,14 +49,44 @@ class UsuarioController {
 
 	def save() {
 		def contrasenaOrig = params.contrasena
-		params.contrasena = params.contrasena.encodeAsMD5()
 		params.fechaInscripcion = new Date()
+		
+		if(params.contrasena ==~ /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])([a-zA-Z0-9]+)/){
+			
+			params.contrasena = params.contrasena.encodeAsMD5()
+			
+			def usuarioInstance = new Usuario(params)
+			
+			if (!usuarioInstance.save(flush: true)) {
+				render(view: "register", model: [usuarioInstance: usuarioInstance])
+				return
+			}
+			
+			flash.message = message(code: 'default.created.message', args: [
+				message(code: 'usuario.label', default: 'Usuario'),
+				usuarioInstance.id
+			])
+			
+			params.load=true
+			params.contrasena=contrasenaOrig
+			params.nombreUsuario=usuarioInstance.nombreUsuario
+			redirect(action: "entrar",params:params)
+		}else{
+			def usuarioInstance = new Usuario(params)
+			render(view: "register", model: [usuarioInstance: usuarioInstance])
+			return
+		}
+		
+		/*params.fechaInscripcion = new Date()
+		params.contrasena = params.contrasena.encodeAsMD5()
+		
 		def usuarioInstance = new Usuario(params)
+		
 		if (!usuarioInstance.save(flush: true)) {
 			render(view: "register", model: [usuarioInstance: usuarioInstance])
 			return
 		}
-
+		
 		flash.message = message(code: 'default.created.message', args: [
 			message(code: 'usuario.label', default: 'Usuario'),
 			usuarioInstance.id
@@ -65,7 +95,7 @@ class UsuarioController {
 		params.load=true
 		params.contrasena=contrasenaOrig
 		params.nombreUsuario=usuarioInstance.nombreUsuario
-		redirect(action: "entrar",params:params)
+		redirect(action: "entrar",params:params)*/
 	}
 
 	def show(Long id) {
