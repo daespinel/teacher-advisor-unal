@@ -48,6 +48,6 @@
 		<g:message code="usuario.contrasena.label" default="Repetir Contraseña" />
 		<span class="required-indicator">*</span>
 	</label><br>
-	<g:passwordField name="contrasena2" maxlength="15" required="" value="${usuarioInstance?.contrasena}"/>
+	<g:passwordField name="contrasena2" maxlength="15" required="" value=""/>
 </div>
 
