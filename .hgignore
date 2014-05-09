@@ -1,0 +1,7 @@
+
+syntax: glob
+teacher-advisor-unal/target/**
+target/**
+/target/**
+syntax: glob
+classes/**
