@@ -58,6 +58,7 @@ class UsuarioController {
 			def usuarioInstance = new Usuario(params)
 			
 			if (!usuarioInstance.save(flush: true)) {
+				usuarioInstance.contrasena = contrasenaOrig
 				render(view: "register", model: [usuarioInstance: usuarioInstance])
 				return
 			}
