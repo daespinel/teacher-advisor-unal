@@ -13,7 +13,7 @@
 		</a>
 		<a href="/Teacher/usuario/salir" class="menuLink" id="logout">${message(code:'default.logout')}
 		</a>
-		<a href="#" class="menuLink" id="profile">${message(code:'default.profile')}
+		<a href="/Teacher/usuario/perfil" class="menuLink" id="profile">${message(code:'default.profile')}
 		</a>
 		
 

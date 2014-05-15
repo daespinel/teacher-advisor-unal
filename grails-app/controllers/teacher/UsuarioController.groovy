@@ -4,6 +4,7 @@ import org.springframework.dao.DataIntegrityViolationException
 
 class UsuarioController {
 	def accessService
+	def imagenService
 
 	static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -28,6 +29,24 @@ class UsuarioController {
 
 		}
 
+	}
+
+	def perfil(){
+		if(!session.usuario){
+			redirect(uri: "/")
+		}
+	}
+
+	def mostrarImagen(){
+		imagenService.mostrarImagen(session,response)
+	}
+
+	def guardarImagen(){
+		def operacion=imagenService.guardarImagen(request,session)
+		if(operacion=="fallo"){
+		render "fuck this fuckinnggg shiiiiiiiitttt!!!!! asdasdasd asdd"
+		}
+		redirect(action: "perfil")
 	}
 
 	def index() {
