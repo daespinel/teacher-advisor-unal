@@ -61,6 +61,8 @@ grails.project.dependency.resolution = {
 
         compile ':cache:1.0.1'
 		
+		compile ":jquery-ui:1.10.3"
+		
 		
     }
 }

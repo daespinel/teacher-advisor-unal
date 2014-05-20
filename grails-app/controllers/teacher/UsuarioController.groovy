@@ -61,6 +61,9 @@ class UsuarioController {
 	def create() {
 		[usuarioInstance: new Usuario(params)]
 	}
+	
+	def testData (){
+	}
 
 	def register() {
 		[usuarioInstance: new Usuario(params)]
