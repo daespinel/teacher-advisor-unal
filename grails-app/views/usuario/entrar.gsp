@@ -15,6 +15,7 @@
 	<div class="body" id="body">
 		<g:render template="/topbar" />
 		<div class="content" id="maincontent">
+		<div id="entrarContent">
 			<g:if test="${flash.message}">
 				<div class="errors">
 					<li>${flash.message}</li>
@@ -23,7 +24,7 @@
 			</g:if>
 
 			<!-- entrada de usuarios -->
-			<div class="groupFields">
+			<div class="groupFields" id="entrar">
 				<header class="header">Entrar</header>
 				<g:form action="entrar" method="post">
 					<fieldset class="form">
@@ -35,6 +36,7 @@
 						<g:actionSubmit value="Entrar" action="entrar" />
 					</fieldset>
 				</g:form>
+			</div>
 			</div>
 			<g:render template="/footer" />
 		</div>

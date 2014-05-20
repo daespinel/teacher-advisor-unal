@@ -98,3 +98,11 @@ ckeditor {
 	
 }
 grails.views.javascript.library="jquery"
+
+grails.resources.modules = {
+	overrides {
+	'jquery-theme' {
+		resource id:'theme', url:'/css/jquery-ui-1.10.4.custom.css'
+	}
+	}
+}

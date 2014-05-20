@@ -4,4 +4,7 @@ beans = {
 		defaultLocale = new Locale("es","ES")
 		java.util.Locale.setDefault(defaultLocale)
 	}
+	
+	
 }
+
