@@ -49,7 +49,7 @@ grails.project.dependency.resolution = {
         runtime ':hibernate:3.6.10.13'
         runtime ":jquery:1.8.3"
         runtime ':resources:1.2.7'
-
+		compile ':ckeditor:4.4.0.0-SNAPSHOT'
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0"
         //runtime ":cached-resources:1.0"

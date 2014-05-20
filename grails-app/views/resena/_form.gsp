@@ -23,7 +23,7 @@
 		<g:message code="resena.texto.label" default="Texto" />
 		
 	</label>
-	<g:textArea name="texto" cols="40" rows="5" maxlength="1000" value="${resenaInstance?.texto}"/>
+	<ckeditor:editor name="texto" />
 </div>
 
 
