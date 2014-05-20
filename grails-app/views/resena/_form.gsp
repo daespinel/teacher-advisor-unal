@@ -10,12 +10,20 @@
 	<g:textField name="titulo" required="" value="${resenaInstance?.titulo}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: resenaInstance, field: 'producto', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: resenaInstance, field: 'servicio', 'error')} required">
+	<label for="servicio">
+		<g:message code="resena.servicio.label" default="Servicio" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="servicio" name="servicio.id" from="${teacher.Servicio.list()}" optionKey="id" required="" value="${resenaInstance?.servicio?.id}"  noSelection="['':'-Elige el servicio para hacer la reseña-']" onChange="cargarProductos();"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: resenaInstance, field: 'producto', 'error')} required" id="producto">
 	<label for="producto">
 		<g:message code="resena.producto.label" default="Producto" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="producto" name="producto.id" from="${teacher.Producto.list()}" optionKey="id" required="" value="${resenaInstance?.producto?.id}" class="many-to-one"/>
+	<g:select id="producto" name="producto.id" from="${teacher.Producto.list()}" />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: resenaInstance, field: 'texto', 'error')} ">

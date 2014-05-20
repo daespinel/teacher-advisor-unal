@@ -9,7 +9,7 @@
 	<g:if test="${session.usuario}">
 		<a href="/Teacher/resena/create" class="menuLink" id="nuevaResena"> ${message(code:'menu.item.1')}
 		</a>
-		<a href="/Teacher/resena/ver" class="menuLink" id="misResenas"> ${message(code:'menu.item.2')}
+		<a href="/Teacher/resena/resenasUsuario" class="menuLink" id="misResenas"> ${message(code:'menu.item.2')}
 		</a>
 		<a href="/Teacher/usuario/salir" class="menuLink" id="logout">${message(code:'default.logout')}
 		</a>

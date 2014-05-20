@@ -2,12 +2,11 @@
 <head>
 <link rel="stylesheet" type="text/css"
 	href="${resource(dir: 'css', file: 'index.css')}" />
-<link rel="stylesheet" type="text/css"
-	href="${resource(dir: 'css', file: 'jquery-ui-1.10.4.custom.css')}" />
-<script src="${resource(dir: 'js', file: 'jquery-2.1.0.min.js')}"></script>
-<script
-	src="${resource(dir: 'js', file: 'jquery-ui-1.10.4.custom.min.js')}"></script>
+<g:javascript library="jquery" />
+<g:javascript library="jquery-ui" />
 <script src="${resource(dir: 'js', file: 'index.js')}"></script>
+<r:layoutResources />
+</head>
 <ckeditor:resources/>
 <title>
 	${message(code:'default.login')}
@@ -48,5 +47,6 @@
 			<g:render template="/footer" />
 		</div>
 	</div>
+	<script src="${resource(dir:'js',file:'nuevaResena.js') }"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 package teacher
 
 import org.springframework.dao.DataIntegrityViolationException
+import grails.converters.*
 
 class ServicioController {
 
@@ -10,6 +11,13 @@ class ServicioController {
         redirect(action: "list", params: params)
     }
 
+	def consultarProductos(){
+		Servicio servicio = Servicio.get(params.id);
+		def productos = servicio.productos
+		render productos as JSON
+		
+	}
+	
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         [servicioInstanceList: Servicio.list(params), servicioInstanceTotal: Servicio.count()]

@@ -1,15 +1,13 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <link rel="stylesheet" type="text/css"
 	href="${resource(dir: 'css', file: 'index.css')}" />
-<link rel="stylesheet" type="text/css"
-	href="${resource(dir: 'css', file: 'jquery-ui-1.10.4.custom.css')}" />
-<script src="${resource(dir: 'js', file: 'jquery-2.1.0.min.js')}"></script>
-<script
-	src="${resource(dir: 'js', file: 'jquery-ui-1.10.4.custom.min.js')}"></script>
+<g:javascript library="jquery" />
+<g:javascript library="jquery-ui" />
 <script src="${resource(dir: 'js', file: 'index.js')}"></script>
-<ckeditor:resources/>
+<r:layoutResources />
+</head>
+<ckeditor:resources />
 <title>
 	${message(code:'default.login')}
 </title>
@@ -38,7 +36,9 @@
 					</span> <span> ${resena.producto.nombre}<br>
 					</span> <span> ${message(code:'resena.texto.label',default:'Texto:') }
 					</span>
-					<ckeditor:editor name="editor.${resena.id}" >${resena.texto}</ckeditor:editor>
+					<ckeditor:editor name="editor.${resena.id}">
+						${resena.texto}
+					</ckeditor:editor>
 					<br>
 				</div>
 			</g:each>
@@ -46,7 +46,7 @@
 		</div>
 	</div>
 	<script>
-		CKEDITOR.config.readOnly=true;
+		CKEDITOR.config.readOnly = true;
 	</script>
 </body>
 </html>
