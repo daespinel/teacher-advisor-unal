@@ -15,7 +15,7 @@
 		<g:message code="servicio.descripcion.label" default="Descripcion" />
 		
 	</label>
-	<g:textField name="descripcion" maxlength="100" value="${servicioInstance?.descripcion}"/>
+	<g:textArea name="descripcion" rows="2" maxlength="200" value="${servicioInstance?.descripcion}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: servicioInstance, field: 'tipo', 'error')} ">
