@@ -8,7 +8,7 @@
 <script
 	src="${resource(dir: 'js', file: 'jquery-ui-1.10.4.custom.min.js')}"></script>
 <script src="${resource(dir: 'js', file: 'index.js')}"></script>
-<script src="${resource(dir: 'js', file: 'ckeditor/ckeditor.js')}"></script>
+<ckeditor:resources/>
 <title>
 	${message(code:'default.login')}
 </title>
@@ -48,8 +48,5 @@
 			<g:render template="/footer" />
 		</div>
 	</div>
-	<script>
-		CKEDITOR.replace('texto');
-	</script>
 </body>
 </html>
