@@ -25,7 +25,7 @@ class ResenaController {
 		save()
 	}
 
-	def ver(){
+	def resenasUsuario(){
 		Usuario userInstance = Usuario.get(session.usuario.id)
 		if(userInstance.resenas.size()>0){
 			[resenas:userInstance.resenas]
@@ -46,7 +46,7 @@ class ResenaController {
 			message(code: 'resena.label', default: 'Resena'),
 			resenaInstance.id
 		])
-		redirect(action: "ver", id: resenaInstance.id)
+		redirect(action: "resenasUsuario", id: resenaInstance.id)
 	}
 
 	def show(Long id) {

@@ -97,3 +97,4 @@ ckeditor {
 	
 	
 }
+grails.views.javascript.library="jquery"
