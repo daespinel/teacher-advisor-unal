@@ -4,7 +4,6 @@
 	href="${resource(dir: 'css', file: 'index.css')}" />
 <g:javascript library="jquery" />
 <g:javascript library="jquery-ui" />
-<script src="${resource(dir: 'js', file: 'index.js')}"></script>
 <r:layoutResources />
 </head>
 <title>
@@ -51,9 +50,11 @@
 				<div class="news" id="RightNews">Contenido Interesante 1</div>
 
 			</div>
+			<g:render template="/usuario/entrar" />
 			<g:render template="/footer" />
 		</div>
 
 	</div>
+	<script src="${resource(dir: 'js', file: 'index.js')}"></script>
 </body>
 </html>

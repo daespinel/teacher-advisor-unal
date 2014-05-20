@@ -21,10 +21,11 @@
 		</label>
 	</g:if>
 	<g:else>
-		<a href="/Teacher/usuario/entrar" class="menuLink" id="login"> ${message(code:'default.login')}
+		<a href="#" class="menuLink" id="login" onClick="dialogoEntrar();"> ${message(code:'default.login')}
 		</a>
 		<a href="/Teacher/usuario/register" class="menuLink" id="register">
 			${message(code:'default.register')}
 		</a>
 	</g:else>
 </div>
+

@@ -45,8 +45,10 @@
 				</g:form>
 
 			</div>
+			<g:render template="entrar" />
 			<g:render template="/footer" />
 		</div>
 	</div>
+	<script src="${resource(dir: 'js', file: 'index.js')}"></script>
 </body>
 </html>

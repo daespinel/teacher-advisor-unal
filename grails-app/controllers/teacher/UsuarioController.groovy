@@ -10,16 +10,17 @@ class UsuarioController {
 
 	//accion para login//
 	def entrar(){
-		if(params.load){
 			def usuario=accessService.controlarEntrada(params)
 			if(!usuario){
 				flash.message = "Credenciales incorrectas, intente nuevamente"
+				response.setHeader('success','false')
+				render flash.message
 			}else{
 				session.usuario = usuario
 				//redireccionar a pagina home!!
 				redirect(uri: "/")
 				//render "exito al entrar yeahh baby"
-			}}
+			}
 	}
 
 	def salir(){
