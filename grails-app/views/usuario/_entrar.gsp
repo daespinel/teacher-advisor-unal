@@ -1,6 +1,6 @@
 <div id="entrarContent" style="display:none;">
 	
-		<div class="errors">
+		<div class="errors" id="entrar">
 		<g:if test="${flash.message}">
 			<li>
 				${flash.message}
@@ -15,11 +15,11 @@
 		<header class="header">Entrar</header>
 			<fieldset class="form">
 				Nombre de Usuario:
-				<g:textField name="nombreUsuario" required value placeholder="Nombre de Usuario" />
+				<g:textField name="nombreUsuario" required value placeholder="Nombre de Usuario" onkeydown="enviarFormularioEntrada(event);" class="entrar"/>
 				<br> Contraseña:
-				<g:passwordField name="contrasena" required value placeholder="Contraseña" />
+				<g:passwordField name="contrasena" required value placeholder="Contraseña" onkeydown="enviarFormularioEntrada(event);" class="entrar"/>
 				<g:hiddenField name="load" value="true" />
-				<g:actionSubmit value="Entrar" action="entrar" onClick="verificarEntrada();"/>
+				<g:actionSubmit value="Entrar" action="entrar" id="botonEntrar" onClick="verificarEntrada();"/>
 			</fieldset>
 	</div>
 </div>

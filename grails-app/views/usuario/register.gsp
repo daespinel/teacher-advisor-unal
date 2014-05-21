@@ -4,7 +4,6 @@
 	href="${resource(dir: 'css', file: 'index.css')}" />
 <g:javascript library="jquery" />
 <g:javascript library="jquery-ui" />
-<script src="${resource(dir: 'js', file: 'index.js')}"></script>
 <r:layoutResources />
 </head>
 <title>
