@@ -87,7 +87,7 @@ body {
 	margin-right: auto;
 	text-align: center;
 	line-height: 2em;
-	font-family: arial;
+	font-family: georgia;
 	font-style: italic;
 	color: white;
 	background-color: AEABAB;
@@ -117,7 +117,7 @@ body {
 	/* width: 186px; */
 	text-align: center;
 	line-height: 2em;
-	font-family: arial;
+	font-family: lucida;
 	font-size: larger;
 	float: right;
 	margin: auto 5px;
@@ -137,7 +137,8 @@ body {
 	/* text-align: center; */
 	background-color: darkgrey;
 	color: white;
-	font-family: arial;
+	font-family: georgia;
+	font-style: bold
 	padding: 16px;
 }
 
@@ -150,6 +151,9 @@ body {
 	color: #FFFFFF;
 	width: 116px;
 	height: 40px;
+	font-family: lucida;
+	font-weight: bold;
+	font-style: bold;
 	text-align: center;
 	line-height: 2.5em;
 	margin: auto 2px;
@@ -236,7 +240,8 @@ img#okImage {
     height: 20px;
 }
 header.header {
-    font-family: arial;
+    font-family: georgia;
+    font-style: bold;
     color: #FFFFFF;
     font-size: xx-large;
     display: inline-block;
@@ -274,7 +279,7 @@ header#crearResena {
 div.resenaVer {
     background-color: #5096A2;
     color: lavender;
-    font-family: arial;
+    font-family: georgia;
     font-size: larger;
     margin: 20px 20px;
     padding: 4px;
