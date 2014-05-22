@@ -27,7 +27,6 @@ class ImagenService {
 			response.outputStream.close()
 		}
 		else{
-			render "nada"
 		}
 	}
 }
