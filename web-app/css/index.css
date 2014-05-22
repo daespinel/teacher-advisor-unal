@@ -3,7 +3,6 @@ body {
 	display: block;
 	height: 100%;
 }
-
 #body {
 	margin: 0 auto;
 	width: 1150px;
@@ -47,6 +46,36 @@ body {
 	margin-top: 20px;
 	margin-bottom: 20px;
 	height: 256px;
+}
+
+#perfilContainer {
+	width: 100%;
+	height: 256px;
+	background-color: AEABAB;
+	float: center;
+	
+	
+}
+
+#imagenPerfil{
+	margin: 10px;
+	height: 150px; 
+	width: 150px;
+	border-radius: 100%;
+}
+
+#imagenContainer{
+	padding: 1px;
+	border-radius: 100%;
+	text-align: center;
+	float: right;
+}
+
+#formulario{
+	text-align: center;
+}
+#datosContainer{
+	text-align: center;
 }
 
 #search {
@@ -287,10 +316,6 @@ div.resenaVer {
 header#verResena {
     margin-left: inherit;
 }
-
-
-
-
 
 .description li {
     list-style: none;
