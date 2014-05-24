@@ -137,12 +137,12 @@ body {
 	background-color: darkgrey;
 	color: white;
 	font-family: georgia;
-	font-style: bold
+	font-style: bold;
 	padding: 16px;
 }
 
 .groupFields#register {
-	width: 213px;
+	width: 208px;
 }
 
 #toplinks a {
