@@ -34,6 +34,8 @@
 					</span> <span> ${resena.producto.servicio.nombre}<br>
 					</span> <span> ${message(code:'resena.producto.label',default:'Producto:') }
 					</span> <span> ${resena.producto.nombre}<br>
+					</span> <span> ${message(code:'resena.valoracion.label',default:'Valoracion:') }
+					</span> <span> ${resena.valoracion}<br>
 					</span> <span> ${message(code:'resena.texto.label',default:'Texto:') }
 					</span>
 					<ckeditor:editor name="editor.${resena.id}">
