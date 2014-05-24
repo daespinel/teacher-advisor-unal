@@ -9,6 +9,7 @@ class Usuario {
 	String nombreUsuario
 	String contrasena
 	String correo
+	String informacion
 	Date fechaInscripcion
 	Imagen imagenPerfil
 
@@ -40,6 +41,7 @@ class Usuario {
 		censurado(display: false)
 		reputacion(display: false)
 		imagenPerfil(nullable:true,display:false)
+		informacion(nullable:true,display:false)
 	}
 
 	String toString(){

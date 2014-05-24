@@ -3,11 +3,16 @@
  */
 
 $(document).ready(function() {
-	$("#formulario").hide();
+	$("#formularioImagen").hide();
+	$("#hintText").hide();
+	$("#progreso").progressbar({
+		value : 50
+	});
+
 });
 $(document).ready(function() {
 	$("#imagenPerfil").click(function() {
-		$("#formulario").dialog({
+		$("#formularioImagen").dialog({
 			draggable : false,
 			resizable : false,
 			modal : true,
@@ -19,5 +24,11 @@ $(document).ready(function() {
 			width : "auto",
 			height : "auto"
 		});
+	});
+	$("#imagenPerfil").mouseenter(function() {
+		$("#hintText").fadeIn("slow");
+	});
+	$("#imagenPerfil").mouseleave(function() {
+		$("#hintText").fadeOut("slow");
 	});
 });
