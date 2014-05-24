@@ -48,36 +48,6 @@ body {
 	height: 256px;
 }
 
-#perfilContainer {
-	width: 100%;
-	height: 256px;
-	background-color: AEABAB;
-	float: center;
-	
-	
-}
-
-#imagenPerfil{
-	margin: 10px;
-	height: 150px; 
-	width: 150px;
-	border-radius: 100%;
-}
-
-#imagenContainer{
-	padding: 1px;
-	border-radius: 100%;
-	text-align: center;
-	float: right;
-}
-
-#formulario{
-	text-align: center;
-}
-#datosContainer{
-	text-align: center;
-}
-
 #search {
 	width: 100%;
 	display: inline-flex;
@@ -371,4 +341,47 @@ img#logoImage {
 	background: transparent url(../images/skin/information.png) 0.5em 50% no-repeat;
 	background-color: aliceblue;
 	text-indent: 2.2em;
+}
+
+#perfilContainer {
+	width: 50%;
+	height: 256px;
+	background-color: darkgrey;
+	margin-left:300px;
+}
+
+#datosContainer {
+	padding:60px;
+}
+
+#datosContainer label{
+	margin-right:10px;
+}
+
+#imagenPerfil{
+	margin: 10px;
+	height: 150px; 
+	width: 150px;
+	border-radius: 100%;
+}
+
+#imagenContainer{
+	padding: 1px;
+	border-radius: 100%;
+	text-align: center;
+	float: right;
+	margin-top: 20px;
+}
+
+#formularioImagen{
+	text-align: center;
+}
+#datosContainer{
+	text-align: justify;
+}
+#progreso{
+	margin-top:5%;
+	margin-left:4%;
+	width: 200px;
+	height:30px;
 }
