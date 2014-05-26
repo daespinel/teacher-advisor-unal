@@ -4,7 +4,7 @@ class Producto {
 	
 	String nombre
 	String caracteristica
-	int calificacion
+	double calificacion
 	Servicio servicio
 	static belongsTo = [servicio:Servicio]
 	static hasMany = [resenas:Resena]
