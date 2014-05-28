@@ -24,7 +24,8 @@ class Producto {
 		double total=0
 		double contador=0
 		this.resenas.each(){res->total=total+res.getValoracion();contador++}
-		promedio=total/contador
+		if(contador!=0){
+		promedio=total/contador}
 		this.calificacion=promedio
 	}
 	
