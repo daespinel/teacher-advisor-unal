@@ -8,7 +8,19 @@ $(document).ready(function() {
 	$("#progreso").progressbar({
 		value : 50
 	});
+	$("#modificarDatosContainer").hide();
+});
 
+$(document).ready(function(){
+	$("#modificar").click(function(){
+		$("#datosContainer").hide();
+		$("#modificarDatosContainer").show({
+			effect : "drop",
+			direction : "up",
+			duration : 400
+		});
+		$("#modificarDatosContainer").fadeIn("slow");
+	});
 });
 $(document).ready(function() {
 	$("#imagenPerfil").click(function() {
