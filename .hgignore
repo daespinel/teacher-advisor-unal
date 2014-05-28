@@ -1,0 +1,9 @@
+
+syntax: glob
+teacher-advisor-unal/target/**
+target/**
+/target/**
+prodDb3.h2.db
+prodDb3.lock.db
+syntax: glob
+classes/**
