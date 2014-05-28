@@ -136,7 +136,14 @@ class UsuarioController {
 
 		[usuarioInstance: usuarioInstance]
 	}
-
+	def modificarDatos(){
+		def usuario=Usuario.get(session?.usuario?.id)
+		usuario.nombres=params.nuevoNombre
+		usuario.apellidos=params.nuevoApellido
+		usuario.correo=params.nuevoCorreo
+		session.usuario=usuario
+		redirect(action: "perfil")
+	}
 	def update(Long id, Long version) {
 		def usuarioInstance = Usuario.get(id)
 		if (!usuarioInstance) {
