@@ -14,19 +14,7 @@ class Producto {
 		caracteristica(maxSize:1000,nullable:true)
 		
     }
-	
 	String toString(){
-		nombre +" "+calificacion
+		nombre
 	}
-	
-	void setPromedio(){
-		double promedio=0
-		double total=0
-		double contador=0
-		this.resenas.each(){res->total=total+res.getValoracion();contador++}
-		if(contador!=0){
-		promedio=total/contador}
-		this.calificacion=promedio
-	}
-	
 }

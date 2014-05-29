@@ -351,9 +351,7 @@ img#logoImage {
 }
 
 #datosContainer {
-	padding-top:60px;
-	padding-left:60px;
-	text-align: justify;
+	padding:60px;
 }
 
 #datosContainer label{
@@ -378,18 +376,12 @@ img#logoImage {
 #formularioImagen{
 	text-align: center;
 }
-#modificarDatosContainer{
-	padding-top:30px;
-	padding-left:30px;
+#datosContainer{
 	text-align: justify;
 }
-#modificarDatosContainer label{
-	margin-right:10px;
-}
-
 #progreso{
-	
-	margin-left: 4%;
+	margin-top:5%;
+	margin-left:4%;
 	width: 200px;
 	height:30px;
 }
