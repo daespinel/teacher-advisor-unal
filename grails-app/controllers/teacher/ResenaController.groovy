@@ -2,7 +2,6 @@ package teacher
 
 import org.springframework.dao.DataIntegrityViolationException
 
-
 class ResenaController {
 
 	static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -27,9 +26,6 @@ class ResenaController {
 	}
 
 	def resenasUsuario(){
-		
-		Producto.list().each(){prod ->prod.setPromedio()}
-		
 		Usuario userInstance = Usuario.get(session.usuario.id)
 		if(userInstance.resenas.size()>0){
 			[resenas:userInstance.resenas]

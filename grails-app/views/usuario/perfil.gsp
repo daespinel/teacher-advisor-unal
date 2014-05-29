@@ -42,52 +42,16 @@
 						</g:form>
 					</div>
 				</div>
-				<div id="datosContainer">
-					<fieldset>
-						<label> ${message(code:'default.nombreLabel')}:
-						</label> <label> ${session.usuario?.nombres}
-						</label><br> <label> ${message(code:'default.apellidoLabel')}:
-						</label> <label> ${session.usuario?.apellidos}
-						</label><br> <label> ${message(code:'default.correoLabel')}:
-						</label> <label> ${session.usuario?.correo} <br> <input
-							id="modificar" type="button"
-							value="${message(code:'default.modificarLabel')}">
-						</label><br>
-					</fieldset>
+				<div id="datosContainer">	
+					<label> ${message(code:'default.nombreLabel')}:
+					</label> <label> ${session.usuario?.nombres}
+					</label><br> <label> ${message(code:'default.apellidoLabel')}:
+					</label> <label> ${session.usuario?.apellidos}
+					</label><br> <label> ${message(code:'default.correoLabel')}:
+					</label> <label> ${session.usuario?.correo}
+					</label><br>
+					
 				</div>
-				<div id="modificarDatosContainer">
-					<fieldset>
-						<g:form method="post" action="modificarDatos">
-							<label> ${message(code:'default.nombreLabel')}:
-							</label>
-							<input type="text" name="nuevoNombre"
-								value="${session.usuario?.nombres}" required>
-							<br>
-							<label> ${message(code:'default.apellidoLabel')}:
-							</label>
-							<input type="text" name="nuevoApellido"
-								value="${session.usuario?.apellidos}" required>
-							<br>
-							<label> ${message(code:'default.correoLabel')}:
-							</label>
-							<input type="email" name="nuevoCorreo"
-								value="${session.usuario?.correo}" required>
-							<br>
-							<label> ${message(code:'default.contraseñaLabel')}: </label>
-							<input type="password" name="contrasena"
-								value="modificar" required>
-							<br>
-							<label> ${message(code:'default.contraseñaLabel')}: </label>
-							<input type="password" name="contrasena"
-								value="modificar" required>
-							<br>
-							<br>
-							<input type="submit"
-								value="${message(code:'default.modificarLabel')}">
-						</g:form>
-					</fieldset>
-				</div>
-				<br>
 				<div id="progreso" title="Barra de progreso"></div>
 			</div>
 			<g:render template="/footer" />
