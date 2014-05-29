@@ -37,36 +37,16 @@ class ResenaController {
 
 	def save() {
 		def resenaInstance = new Resena(params)
-		
-		String texto = resenaInstance.getTexto()
-		List textoTokenizado = texto.tokenize()
-		
-		List profanidades = ["fuck","hijo de puta","shit" ,"mierda" ,"sh1t","gonorrea" ,"pirobo","malparido" ,"malparidos","puta" ,"putos","putas" ,"mierdas","malditos" ,"pirobos","fucking" ,"hijos de puta","ass" ,"culon","culones" ,"jijueputa","sigan llenando la lista" ,""]
-		def l = textoTokenizado as Set
-		def p = (profanidades as Set)
-		def i = l.intersect(p)
-		
-		if (i.empty){
-			
-			if (!resenaInstance.save(flush: true)) {
-				render(view: "create", model: [resenaInstance: resenaInstance])
-				return
-			}
-	
-			flash.message = message(code: 'default.created.message', args: [
-				message(code: 'resena.label', default: 'Resena'),
-				resenaInstance.id
-			])
-			
-			redirect(action: "resenasUsuario", id: resenaInstance.id)
-		
-		}else{
-			print "Filtrando cualquier cosa que sea la primera y ultima palabra por ahora. No filtra palabras unicas"
-			flash.message=message(code:'error.profanidad')
-			render(view: "nueva")
+		if (!resenaInstance.save(flush: true)) {
+			render(view: "create", model: [resenaInstance: resenaInstance])
 			return
 		}
-		
+
+		flash.message = message(code: 'default.created.message', args: [
+			message(code: 'resena.label', default: 'Resena'),
+			resenaInstance.id
+		])
+		redirect(action: "resenasUsuario", id: resenaInstance.id)
 	}
 
 	def show(Long id) {
