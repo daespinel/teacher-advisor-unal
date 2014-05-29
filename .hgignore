@@ -3,6 +3,5 @@ syntax: glob
 teacher-advisor-unal/target/**
 target/**
 /target/**
-grails-app/controllers/teacher/CopyOfResenaController.groovy
 syntax: glob
 classes/**
