@@ -345,13 +345,13 @@ img#logoImage {
 
 #perfilContainer {
 	width: 50%;
-	height: 256px;
+	height: 390px;
 	background-color: darkgrey;
 	margin-left:300px;
 }
 
 #datosContainer {
-	padding-top:60px;
+	padding-top:15%;
 	padding-left:60px;
 	text-align: justify;
 }
@@ -372,7 +372,7 @@ img#logoImage {
 	border-radius: 100%;
 	text-align: center;
 	float: right;
-	margin-top: 20px;
+	margin-top: 10%;
 }
 
 #formularioImagen{
@@ -388,7 +388,6 @@ img#logoImage {
 }
 
 #progreso{
-	
 	margin-left: 4%;
 	width: 200px;
 	height:30px;

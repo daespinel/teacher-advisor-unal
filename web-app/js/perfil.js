@@ -9,10 +9,22 @@ $(document).ready(function() {
 		value : 50
 	});
 	$("#modificarDatosContainer").hide();
+	$("#cambiarContrasenaInputs").hide();
 });
 
-$(document).ready(function(){
-	$("#modificar").click(function(){
+$(document).ready(function() {
+	$("#cancelar").click(function() {
+		$("#modificarDatosContainer").hide();
+		$("#datosContainer").show({
+			effect : "drop",
+			direction : "up",
+			duration : 400
+		});
+	});
+});
+
+$(document).ready(function() {
+	$("#modificar").click(function() {
 		$("#datosContainer").hide();
 		$("#modificarDatosContainer").show({
 			effect : "drop",
@@ -42,5 +54,24 @@ $(document).ready(function() {
 	});
 	$("#imagenPerfil").mouseleave(function() {
 		$("#hintText").fadeOut("slow");
+	});
+});
+
+$(document).ready(function() {
+	$("#formularioImagen").hide();
+	$("#hintText").hide();
+	$("#progreso").progressbar({
+		value : 50
+	});
+	$("#modificarDatosContainer").hide();
+});
+
+$(document).ready(function() {
+	$("#cambiarContrasena").click(function(){
+		$("#cambiarContrasenaInputs").toggle({
+			effect : "drop",
+			direction : "up",
+			duration : 400
+		});
 	});
 });
