@@ -10,17 +10,17 @@ class UsuarioController {
 
 	//accion para login//
 	def entrar(){
-			def usuario=accessService.controlarEntrada(params)
-			if(!usuario){
-				flash.message = "Credenciales incorrectas, intente nuevamente"
-				response.setHeader('success','false')
-				render flash.message
-			}else{
-				session.usuario = usuario
-				//redireccionar a pagina home!!
-				redirect(uri: "/")
-				//render "exito al entrar yeahh baby"
-			}
+		def usuario=accessService.controlarEntrada(params)
+		if(!usuario){
+			flash.message = "Credenciales incorrectas, intente nuevamente"
+			response.setHeader('success','false')
+			render flash.message
+		}else{
+			session.usuario = usuario
+			//redireccionar a pagina home!!
+			redirect(uri: "/")
+			//render "exito al entrar yeahh baby"
+		}
 	}
 
 	def salir(){
@@ -45,7 +45,7 @@ class UsuarioController {
 	def guardarImagen(){
 		def operacion=imagenService.guardarImagen(request,session)
 		if(operacion=="fallo"){
-		render "fuck this fuckinnggg shiiiiiiiitttt!!!!! asdasdasd asdd"
+			render "fuck this fuckinnggg shiiiiiiiitttt!!!!! asdasdasd asdd"
 		}
 		redirect(action: "perfil")
 	}
@@ -62,7 +62,7 @@ class UsuarioController {
 	def create() {
 		[usuarioInstance: new Usuario(params)]
 	}
-	
+
 	def testData (){
 	}
 
@@ -77,7 +77,7 @@ class UsuarioController {
 			if(params.contrasena ==~ /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])([a-zA-Z0-9]+)/){
 
 				params.contrasena = params.contrasena.encodeAsMD5()
-
+				params.anonimo=false
 				def usuarioInstance = new Usuario(params)
 
 				if (!usuarioInstance.save(flush: true)) {
@@ -137,13 +137,42 @@ class UsuarioController {
 		[usuarioInstance: usuarioInstance]
 	}
 	def modificarDatos(){
+		
 		def usuario=Usuario.get(session?.usuario?.id)
 		usuario.nombres=params.nuevoNombre
 		usuario.apellidos=params.nuevoApellido
 		usuario.correo=params.nuevoCorreo
+
+		switch(params.anonimo){
+			case "verdadero":
+				usuario.anonimo=true
+				break
+			case "falso":
+				usuario.anonimo=false
+				break
+		}
+		
 		session.usuario=usuario
 		redirect(action: "perfil")
 	}
+
+	def modificarContrasena(){
+		def contrasenaOrig = params.contrasenaMd
+		if(contrasenaOrig==params.contrasenaMd2){
+			if(params.contrasenaMd ==~ /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])([a-zA-Z0-9]+)/){
+				def usuario=Usuario.get(session?.usuario?.id)
+				usuario.contrasena=params.contrasenaMd.encodeAsMD5()
+				session.usuario=usuario
+			}
+			else{
+				flash.message=message(code:'error.formato.contrasena')
+			}
+		}else{
+			flash.message=message(code:'error.verificacion.contrasena')
+		}
+		redirect(action: "perfil")
+	}
+
 	def update(Long id, Long version) {
 		def usuarioInstance = Usuario.get(id)
 		if (!usuarioInstance) {

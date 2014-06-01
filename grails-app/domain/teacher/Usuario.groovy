@@ -17,6 +17,7 @@ class Usuario {
 	int reputacion
 	boolean destacado
 	boolean censurado
+	boolean anonimo
 
 	/*Relacion Usuario-Reseñas*/
 	static hasMany=[resenas:Resena]
@@ -40,6 +41,7 @@ class Usuario {
 		destacado(display: false)
 		censurado(display: false)
 		reputacion(display: false)
+		anonimo(display: false)
 		imagenPerfil(nullable:true,display:false)
 		informacion(nullable:true,display:false)
 	}

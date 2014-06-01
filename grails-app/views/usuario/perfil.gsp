@@ -16,7 +16,14 @@
 	<div class="body" id="body">
 		<g:render template="/topbar" />
 		<div class="content" id="maincontent">
-
+			<g:if test="${flash.message}">
+				<div class="errors" role="status">
+					<li>
+						${flash.message}
+					</li>
+					${flash.message = '' }
+				</div>
+			</g:if>
 			<div id="perfilContainer">
 				<div id="imagenContainer">
 					<g:if test="${session.usuario?.imagenPerfil}">
@@ -49,8 +56,8 @@
 						</label><br> <label> ${message(code:'default.apellidoLabel')}:
 						</label> <label> ${session.usuario?.apellidos}
 						</label><br> <label> ${message(code:'default.correoLabel')}:
-						</label> <label> ${session.usuario?.correo} <br> <input
-							id="modificar" type="button"
+						</label> <label> ${session.usuario?.correo} <br> <br> <br>
+							<input id="modificar" type="button"
 							value="${message(code:'default.modificarLabel')}">
 						</label><br>
 					</fieldset>
@@ -73,22 +80,31 @@
 							<input type="email" name="nuevoCorreo"
 								value="${session.usuario?.correo}" required>
 							<br>
-							<label> ${message(code:'default.contraseñaLabel')}: </label>
-							<input type="password" name="contrasena"
-								value="modificar" required>
 							<br>
-							<label> ${message(code:'default.contraseñaLabel')}: </label>
-							<input type="password" name="contrasena"
-								value="modificar" required>
-							<br>
+							<input type="radio" name="anonimo" value="verdadero" required>Modo Icognito<br>
+							<input type="radio" name="anonimo" value="falso" required>Mostrar Nombre<br>
 							<br>
 							<input type="submit"
 								value="${message(code:'default.modificarLabel')}">
+							<input type="button" value="Cancelar" id="cancelar">
 						</g:form>
+						<input type="button" value="cambiar Contraseña"
+							id="cambiarContrasena"> <br>
+						<div id="cambiarContrasenaInputs">
+							<form method="post" action="modificarContrasena">
+								<label> ${message(code:'default.contraseñaLabel')}:
+								</label> <input type="password" name="contrasenaMd" value="Modificar"
+									required> <br> <label> ${message(code:'default.repetirContraseñaLabel')}:
+								</label> <input type="password" name="contrasenaMd2" value="Modificar"
+									required> <br> <input type="submit" value="Enviar">
+							</form>
+						</div>
 					</fieldset>
 				</div>
 				<br>
+				<!--
 				<div id="progreso" title="Barra de progreso"></div>
+				-->
 			</div>
 			<g:render template="/footer" />
 		</div>
