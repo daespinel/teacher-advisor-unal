@@ -5,6 +5,7 @@
 <g:javascript library="jquery" />
 <g:javascript library="jquery-ui" />
 <r:layoutResources />
+<script src="${resource(dir: 'js', file: 'registerValidations.js')}"></script>
 </head>
 <title>
 	${message(code:'default.inicio')}
@@ -13,14 +14,12 @@
 	<div class="body" id="body">
 		<g:render template="/topbar" />
 		<div class="content" id="maincontent">
-			<g:if test="${flash.message}">
 				<div class="errors" role="status">
 					<li>
 						${flash.message}
 					</li>
 					${flash.message = '' }
 				</div>
-			</g:if>
 			<g:hasErrors bean="${usuarioInstance}">
 				<ul class="errors" role="alert">
 					<g:eachError bean="${usuarioInstance}" var="error">
@@ -35,11 +34,11 @@
 				<header class="header" id="register">
 					${message(code:'default.register')}
 				</header>
-				<g:form action="save">
+				<g:form action="save" onSubmit="return validarDatosRegistro()">
 					<fieldset class="form">
 						<g:render template="form" />
 						<g:submitButton name="register" class="save"
-							value="${message(code: 'default.button.register.label', default: 'Registrar')}" />
+							value="${message(code: 'default.button.register.label', default: 'Registrar')}"/>
 					</fieldset>
 				</g:form>
 

@@ -22,6 +22,26 @@ class UsuarioController {
 			//render "exito al entrar yeahh baby"
 		}
 	}
+	
+	def exists(){
+		def usuario = Usuario.findByNombreUsuario(params.username)
+		def usuarioEmail = Usuario.findByCorreo(params.email)
+		if(usuario == null && usuarioEmail ==null)
+		{response.setHeader("exists", "false");
+			render false
+
+			return}
+		
+		if(usuario == null){
+			response.setHeader("exists", "email");
+		}else{
+			response.setHeader("exists", "username");
+		}
+		
+		render true
+		return
+	}
+
 
 	def salir(){
 		def exito = accessService.controlarSalida(session)
