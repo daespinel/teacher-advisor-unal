@@ -23,11 +23,12 @@ function verificarEntrada() {
 		var result = jqXHR.getResponseHeader("success");
 		if (result == "false") {
 			var html = "<li>" + data + "</li>";
-			$("div.errors").html(html);
-			$("div.errors").show();
+			$("div.errors#entrar").html(html);
+			$("div.errors#entrar").show();
+			$("div.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front").css({left:"707.15px"});
 		} else {
 			document.write(data);
-			$("div.errors").hide();
+			$("div.errors#entrar").hide();
 		}
 	});
 
