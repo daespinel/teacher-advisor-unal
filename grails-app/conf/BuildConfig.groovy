@@ -37,6 +37,7 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
+		mavenRepo "http://repo.grails.org/grails/core"
     }
 
     dependencies {
@@ -50,6 +51,8 @@ grails.project.dependency.resolution = {
         runtime ":jquery:1.11.0.2"
         runtime ':resources:1.2.7'
 		compile ':ckeditor:4.4.0.0-SNAPSHOT'
+		compile ':searchable:0.6.7'
+		
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0"
         //runtime ":cached-resources:1.0"

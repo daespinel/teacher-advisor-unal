@@ -30,18 +30,19 @@
 					</li>
 				</div>
 			</div>
-			<div id="search">
-				<div id="searchFields">
-					<g:field type="text"
-						placeholder="${message(code:'buscar.placeholder')}"
-						name="textoBusqueda" />
-					<g:select name="tipoBusqueda" from="" />
+			<g:form method="get" action="buscar" controller="pagina">
+				<div id="search">
+					<div id="searchFields">
+						<g:field type="text"
+							placeholder="${message(code:'buscar.placeholder')}"
+							name="textoBusqueda" />
+						<g:select name="tipoBusqueda" from="${['servicio','producto']}" />
+					</div>
 				</div>
-			</div>
-			<div id="searchButton">
-				<g:actionSubmit value="${message(code:'buscar.valorBoton')}" />
-			</div>
-
+				<div id="searchButton">
+					<g:actionSubmit value="${message(code:'buscar.valorBoton')}" />
+				</div>
+			</g:form>
 			<div id="news">
 				<div class="news" id="LeftNews">Contenido Interesante 1</div>
 

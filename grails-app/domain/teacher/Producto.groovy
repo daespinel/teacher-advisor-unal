@@ -1,7 +1,7 @@
 package teacher
 
 class Producto {
-	
+
 	String nombre
 	String caracteristica
 	double calificacion
@@ -9,24 +9,27 @@ class Producto {
 	static belongsTo = [servicio:Servicio]
 	static hasMany = [resenas:Resena]
 
-    static constraints = {
+	//habilitar buscador
+	static searchable = true
+
+	static constraints = {
 		nombre(size:5..99,nullable:false)
 		caracteristica(maxSize:1000,nullable:true)
-		
-    }
-	
+
+	}
+
 	String toString(){
 		nombre +" "+calificacion
 	}
-	
+
 	void setPromedio(){
 		double promedio=0
 		double total=0
 		double contador=0
 		this.resenas.each(){res->total=total+res.getValoracion();contador++}
 		if(contador!=0){
-		promedio=total/contador}
+			promedio=total/contador}
 		this.calificacion=promedio
 	}
-	
+
 }
