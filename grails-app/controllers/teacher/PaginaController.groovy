@@ -7,11 +7,16 @@ class PaginaController {
 	def buscarService
 	
     def buscar(){
+		def resultado
 		if(params?.tipoBusqueda=="servicio"){
-			buscarService.buscarServicio(params)
+			resultado=buscarService.buscarServicio(params)
 		}
 		else{
-			buscarService.buscarProducto(params)
+			resultado=buscarService.buscarProducto(params)
 		}
+		if(!resultado){
+			redirect(uri: "/")
+		}
+		return resultado
 	}
 }

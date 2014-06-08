@@ -4,6 +4,7 @@ class Servicio {
 
 	String nombre
 	String descripcion
+	String caracteristica
 	String tipo
 	int calificacion_promedio
 	static hasMany = [productos:Producto]
@@ -13,7 +14,8 @@ class Servicio {
 
 	static constraints = {
 		nombre(size:5..99,nullable:false)
-		descripcion(size:10..100,nullable:true)
+		descripcion(maxSize:1000,nullable:true)
+		caracteristica(size:10..30,nullable:true)
 		tipo(nullable:false,size:5..30)
 	}
 
