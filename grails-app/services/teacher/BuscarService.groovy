@@ -7,8 +7,9 @@ class BuscarService {
 	static String token="*"
 	
 	def buscarServicio(params) {
+		params.max=5
 		if (!params.textoBusqueda?.trim()) {
-			redirect(uri:"")
+			return false
 		}
 		try {
 			String terminoBusqueda = token + params.textoBusqueda + token
@@ -18,8 +19,9 @@ class BuscarService {
 		}
 	}
 	def buscarProducto(params){
+		params.max=5
 		if (!params.textoBusqueda?.trim()) {
-			redirect(uri:"")
+			return false
 		}
 		try {
 			String terminoBusqueda = token + params.textoBusqueda + token

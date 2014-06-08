@@ -4,6 +4,7 @@ class Producto {
 
 	String nombre
 	String caracteristica
+	String descripcion
 	double calificacion
 	Servicio servicio
 	static belongsTo = [servicio:Servicio]
@@ -14,7 +15,8 @@ class Producto {
 
 	static constraints = {
 		nombre(size:5..99,nullable:false)
-		caracteristica(maxSize:1000,nullable:true)
+		caracteristica(size:10..30,nullable:true)
+		descripcion(maxSize:1000,nullable:true)
 
 	}
 

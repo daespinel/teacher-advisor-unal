@@ -10,6 +10,14 @@
 	<g:textField name="nombre" required="" value="${productoInstance?.nombre}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: productoInstance, field: 'descripcion', 'error')} ">
+	<label for="descripcion">
+		<g:message code="producto.descripcion.label" default="Descripcion" />
+		
+	</label>
+	<g:textArea name="descripcion" rows="2" maxlength="200" value="${productoInstance?.descripcion}"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: productoInstance, field: 'caracteristica', 'error')} ">
 	<label for="caracteristica">
 		<g:message code="producto.caracteristica.label" default="Caracteristica" />

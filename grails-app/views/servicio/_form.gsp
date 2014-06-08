@@ -18,6 +18,14 @@
 	<g:textArea name="descripcion" rows="2" maxlength="200" value="${servicioInstance?.descripcion}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: servicioInstance, field: 'caracteristica', 'error')} ">
+	<label for="caracteristica">
+		<g:message code="servicio.caracteristica.label" default="Caracteristica" />
+		
+	</label>
+	<g:textField name="caracteristica" value="${servicioInstance?.caracteristica}"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: servicioInstance, field: 'tipo', 'error')} ">
 	<label for="tipo">
 		<g:message code="servicio.tipo.label" default="Tipo" />
