@@ -48,9 +48,9 @@
 <script language="javascript">
 
 	$('#star').raty({
-			path: '/Teacher/static/images/new',score:3,
+			path: '/Teacher/static/images/new',score:3,half:true,
 			click: function(score, evt) {
-			    alert('ID: ' + $(this).attr('id') + "\nscore: " + score );
+			    alert('El puntaje que usted esta dando es de:' + "\npuntaje: " + score );
 			    
 			  },target : '#hint',targetType : 'number',targetKeep : true
 			
