@@ -6,11 +6,12 @@ import grails.transaction.Transactional
 class VerificarLenguajeService {
 
     def buscarProfanidades(String texto) {
+		if (!texto) return false
 		
 		List profan = [/(?i)(\s)?f(\s)?.+c(\s)?k*(\s)?(.+n(g)?)?(\s)?/,
 			/(?i)(\s)?s(\s)?h(\s)?.+(\s)?t(\s)?/,
 			/(?i)(\s)?bullsh.+t(\s)?/,
-			/(?i)(\s)?hijo(\s)?de(\s)?puta(\s)?/]	
+			/(?i)(\s)?hijo(\s)?de(\s)?puta(\s)?/]
 		
 		List pMatch = []
 		
