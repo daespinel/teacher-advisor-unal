@@ -41,18 +41,18 @@
 		<p><a href="javascript:" ></a></p>
 			
 	</label>
-	<div id="star" ><g:field name="valoracion" type="hidden" id="hint"  value="${resenaInstance?.valoracion}"/></div>
-	
+	<div id="star" ><g:field name="valoracion" id="precision-hint" type="hidden" class="input hint" value="${resenaInstance?.valoracion}"/></div>
+
 </div>
 
 <script language="javascript">
 
 	$('#star').raty({
-			path: '/Teacher/static/images/new',score:3,half:true,
+			path: '/Teacher/static/images/new',score:3,
 			click: function(score, evt) {
 			    alert('El puntaje que usted esta dando es de:' + "\npuntaje: " + score );
 			    
-			  },target : '#hint',targetType : 'number',targetKeep : true
+			  },target: '#precision-hint',targetType : 'number',targetKeep : true
 			
 		})	;
 </script>
