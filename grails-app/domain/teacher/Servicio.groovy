@@ -6,7 +6,7 @@ class Servicio {
 	String descripcion
 	String caracteristica
 	String tipo
-	int calificacion_promedio
+	double calificacion_promedio
 	static hasMany = [productos:Producto]
 
 	//habilitar buscador
@@ -23,4 +23,15 @@ class Servicio {
 		nombre
 
 	}
+	
+	void setPromedio(){
+		double promedio=0
+		double total=0
+		double contador=0
+		this.productos.each(){prod->total=total+prod.getCalificacion();contador++}
+		if(contador!=0){
+			promedio=total/contador}
+		this.calificacion_promedio=promedio
+	}
+
 }

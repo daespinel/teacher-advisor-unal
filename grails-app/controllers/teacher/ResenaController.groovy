@@ -31,6 +31,7 @@ class ResenaController {
 	def resenasUsuario(){
 		
 		Producto.list().each(){prod ->prod.setPromedio()}
+		Servicio.list().each(){serv ->serv.setPromedio()}
 		
 		Usuario userInstance = Usuario.get(session.usuario.id)
 		if(userInstance.resenas.size()>0){
