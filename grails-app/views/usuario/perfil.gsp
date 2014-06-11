@@ -16,6 +16,7 @@
 	<div class="body" id="body">
 		<g:render template="/topbar" />
 		<div class="content" id="maincontent">
+		<header class="header" id="verPerfil">${message(code:'default.perfil')}</header>
 			<g:if test="${flash.message}">
 				<div class="errors" role="status">
 					<li>
