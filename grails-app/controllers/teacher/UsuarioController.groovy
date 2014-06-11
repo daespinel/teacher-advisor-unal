@@ -63,9 +63,13 @@ class UsuarioController {
 	}
 
 	def guardarImagen(){
+		
 		def operacion=imagenService.guardarImagen(request,session)
-		if(operacion=="fallo"){
-			render "fuck this fuckinnggg shiiiiiiiitttt!!!!! asdasdasd asdd"
+		if(operacion=="fallo"||operacion=="falloArchivo"){
+			flash.message = message(code:'error.subirImagen')
+		}
+		if(operacion=="falloTamaño"){
+			flash.message = message(code:'error.tamanoImagen')
 		}
 		redirect(action: "perfil")
 	}
