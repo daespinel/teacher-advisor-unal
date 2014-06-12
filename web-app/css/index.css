@@ -112,7 +112,7 @@ body {
 #toplinks {
 	height: 41px;
 	padding: 9px;
-	background-color: #5096BA;
+	background-color: #0972a5;
 	/* border-style: groove; */
 	/* border-color: cadetblue; */
 }
@@ -160,7 +160,7 @@ body {
 }
 
 #myAds {
-	background-color: #5096BA;
+	background-color: #0972a5;
 	height: 140px;
 	margin: 20px;
 }
@@ -239,11 +239,12 @@ header.header {
 	font-size: xx-large;
 	display: inline-block;
 	background-color: #585858;
-	/* width: 164px; */
+	width: 237px;
 	padding: 5px;
 	border-radius: 20px;
 	margin-left: 75px;
 	margin-bottom: 10px;
+	text-align: center;
 }
 
 fieldset.form {
@@ -298,7 +299,7 @@ div.resenaVer {
 }
 
 header#verResena {
-	margin-left: inherit;
+	margin-left: 438;
 }
 
 .description li {

@@ -36,7 +36,7 @@
 						<g:field type="text"
 							placeholder="${message(code:'buscar.placeholder')}"
 							name="textoBusqueda" />
-						<g:select name="tipoBusqueda" from="${['servicio','producto']}" />
+						<g:select name="tipoBusqueda" from="${['Servicio','Producto']}" />
 					</div>
 				</div>
 				<div id="searchButton">

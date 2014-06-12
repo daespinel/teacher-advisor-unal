@@ -8,7 +8,7 @@ class PaginaController {
 	
     def buscar(){
 		def resultado
-		if(params?.tipoBusqueda=="servicio"){
+		if(params?.tipoBusqueda=="Servicio"){
 			resultado=buscarService.buscarServicio(params)
 		}
 		else{
