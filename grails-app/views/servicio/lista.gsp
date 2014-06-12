@@ -28,7 +28,7 @@
 			<header class="header" id="verServicios">Lista de Servicios</header>
 			<div id="accordion">
 				<g:each in="${servicios.sort{-it.id}}" var="servicio">
-				<div><a href="${createLink(controller: 'servicio', action: 'productosServicio', id: servicio.id)}" >  ${servicio.nombre}
+				<div><a class="insideLink" href="${createLink(controller: 'servicio', action: 'productosServicio', id: servicio.id)}" >  ${servicio.nombre}
 		</a></div>
 					<div class="resenaVer" id="servicio-${servicio.id}">
 						<span> ${message(code:'servicio.descripcion.label',default:'Descripcion:') }

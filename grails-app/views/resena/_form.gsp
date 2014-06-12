@@ -50,7 +50,7 @@
 	$('#star').raty({
 			path: '/Teacher/static/images/new',score:3,
 			click: function(score, evt) {
-			    alert('El puntaje que usted esta dando es de:' + "\npuntaje: " + score );
+			   // alert('El puntaje que usted esta dando es de:' + "\npuntaje: " + score );
 			    
 			  },target: '#precision-hint',targetType : 'number',targetKeep : true
 			

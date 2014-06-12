@@ -29,7 +29,7 @@
 			<header class="header" id="productosServicio">Productos del servicio: ${servicio.nombre} </header>
 			<div id="accordion">
 				<g:each in="${servicio.productos.sort{-it.id}}" var="producto">
-				<div><a href="${createLink(controller: 'producto', action: 'thread', id: producto.id)}" >${producto.nombre}
+				<div><a class="insideLink" href="${createLink(controller: 'producto', action: 'thread', id: producto.id)}" >${producto.nombre}
 		</a></div>
 					<div class="resenaVer" id="producto-${producto.id}">
 						<span> ${message(code:'producto.caracteristica.label',default:'Caracteristica:') }
