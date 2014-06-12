@@ -28,6 +28,7 @@ body {
 	display: inline-block;
 	margin-left: auto;
 	margin-right: auto;
+	background: -webkit-linear-gradient(#2F5F8F, #317385);
 }
 
 #footer {
@@ -112,7 +113,8 @@ body {
 #toplinks {
 	height: 41px;
 	padding: 9px;
-	background-color: #0972a5;
+	background: -webkit-linear-gradient(#2F5F8F, #54AAFF);
+	/* background-color: #0972a5; */
 	/* border-style: groove; */
 	/* border-color: cadetblue; */
 }
@@ -160,9 +162,10 @@ body {
 }
 
 #myAds {
-	background-color: #0972a5;
+	/* background-color: #0972a5; */
 	height: 140px;
 	margin: 20px;
+	background: -webkit-linear-gradient(#2F5F8F, #54AAFF);
 }
 
 a {
@@ -239,7 +242,7 @@ header.header {
 	font-size: xx-large;
 	display: inline-block;
 	background-color: #585858;
-	width: 237px;
+	/* width: 229px; */
 	padding: 5px;
 	border-radius: 20px;
 	margin-left: 75px;
@@ -249,6 +252,7 @@ header.header {
 
 fieldset.form {
 	background-color: #5096BA;
+	background: -webkit-linear-gradient(#2F5F8F, #54AAD7);
 }
 
 header#register {
@@ -286,7 +290,7 @@ div#footer {
 }
 
 header#crearResena {
-	margin-left: 211px;
+	margin-left: 228px;
 }
 
 div.resenaVer {
@@ -299,7 +303,9 @@ div.resenaVer {
 }
 
 header#verResena {
-	margin-left: 438;
+	margin-left: 468;
+	margin-top: 25;
+	margin-bottom: 25;
 }
 
 .description li {
@@ -311,10 +317,8 @@ img#logoImage {
 	height: 219px;
 }
 
-
 /*perfil*/
-
-header#verPerfil{
+header#verPerfil {
 	margin-left: inherit;
 }
 
@@ -372,7 +376,6 @@ header#verPerfil{
 }
 
 /*busqueda*/
-
 #busquedaContainer {
 	width: 50%;
 	height: 390px;
@@ -397,15 +400,13 @@ header#verPerfil{
 	font-size: larger;
 }
 
-
-
 .avisoContainer {
 	margin-top: 10%;
 	background-color: #FFFFFF;
 }
 
 .name {
-	margin-left:5px;
+	margin-left: 5px;
 }
 
 .caracteristica {
@@ -456,4 +457,96 @@ header#verPerfil{
 		no-repeat;
 	background-color: aliceblue;
 	text-indent: 2.2em;
+}
+
+div#resenasResaltadas {
+	display: inline-flex;
+	width: 100%;
+}
+
+div.resenaVer2 {
+	color: lavender;
+	font-family: georgia;
+	font-size: larger;
+}
+
+div#mejorResena {
+	padding: 10;
+}
+
+div#peorResena {
+	padding: 10;
+}
+
+div#tabs-2 {
+	width: 600;
+}
+
+div#tabsB-2 {
+	width: 600;
+}
+
+div#containerDatos {
+	/* background-color: #0972a5; */
+	height: 140px;
+	/* margin: 20px; */
+	/* background: -webkit-linear-gradient(#2F5F8F, #54AAFF); */
+	color: lavender;
+	font-family: georgia;
+	font-size: larger;
+	display: inline-flex;
+	width: 100%;
+}
+
+div#datosProducto1 {
+	padding: 30;
+	width: 100%;
+}
+
+div#datosProducto2 {
+	padding: 30;
+	width: 100%;
+}
+
+div#containerTop {
+	background: -webkit-linear-gradient(#2F5F8F, #54AAFF);
+}
+
+div#containerDatos2 {
+	color: lavender;
+	font-family: georgia;
+	font-size: larger;
+	align-content: center;
+	text-align: center;
+}
+
+header#mejorResena {
+	margin-left: 162;
+	margin-top: 20;
+}
+
+header#peorResena {
+	margin-left: 173;
+	margin-top: 20;
+}
+
+header#totalResenas {
+	margin-left: 418;
+	margin-top: 30;
+}
+
+header#verServicios {
+	margin-left: 442;
+	margin-top: 25;
+	margin-bottom: 25;
+}
+
+header#productosServicio {
+	margin-left: 318;
+	margin-top: 25;
+	margin-bottom: 25;
+}
+
+span a.linkInside {
+	text-decoration: underline;
 }

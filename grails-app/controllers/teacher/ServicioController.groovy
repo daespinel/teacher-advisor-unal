@@ -23,6 +23,26 @@ class ServicioController {
         [servicioInstanceList: Servicio.list(params), servicioInstanceTotal: Servicio.count()]
     }
 
+	def lista(){
+		if(Servicio.count()>0){
+			[servicios:Servicio.getAll()]
+		}else{
+			flash.message=message(code:"error.servicios.0")
+		}
+	}
+	
+	def productosServicio(Long id){
+		def servicioInstance = Servicio.get(id)
+		if (!servicioInstance) {
+			flash.message = message(code: 'default.not.found.message', args: [message(code: 'servicio.label', default: 'Servicio'), id])
+			redirect(action: "list")
+			return
+		}
+
+		[servicio: servicioInstance]
+		
+	}
+	
     def create() {
         [servicioInstance: new Servicio(params)]
     }

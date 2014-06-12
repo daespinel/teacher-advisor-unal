@@ -8,7 +8,7 @@
 <script src="${resource(dir: 'js', file: 'registerValidations.js')}"></script>
 </head>
 <title>
-	${message(code:'default.inicio')}
+	${message(code:'default.register')}
 </title>
 <body>
 	<div class="body" id="body">

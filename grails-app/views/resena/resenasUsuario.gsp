@@ -11,7 +11,7 @@
 </head>
 <ckeditor:resources />
 <title>
-	${message(code:'default.login')}
+	${message(code:'default.misResenas')}
 </title>
 </head>
 <body>
@@ -33,9 +33,9 @@
 				<div> ${resena.titulo}</div>
 					<div class="resenaVer" id="${session.usuario}-${resena.id}">
 						<span> ${message(code:'resena.servicio.label',default:'Servicio:') }
-						</span> <span> ${resena.producto.servicio.nombre}<br>
+						</span> <span><a class="linkInside" href="${createLink(controller: 'servicio', action: 'productosServicio', id: resena.producto.servicio.id)}" >   ${resena.producto.servicio.nombre}</a><br>
 						</span> <span> ${message(code:'resena.producto.label',default:'Producto:') }
-						</span> <span> ${resena.producto.nombre}<br>
+						</span> <span><a class="linkInside" href="${createLink(controller: 'producto', action: 'thread', id: resena.producto.id)}" >   ${resena.producto.nombre}</a><br>
 						</span> <span> ${message(code:'resena.valoracion.label',default:'Valoracion:') }
 						</span> <span> ${resena.valoracion}<br>
 						</span> <span> ${message(code:'resena.texto.label',default:'Texto:') }
