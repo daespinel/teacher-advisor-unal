@@ -30,7 +30,7 @@
 				<g:each in="${servicios.sort{-it.id}}" var="servicio">
 					<div>
 						<a class="insideLink"
-							href="${createLink(controller: 'servicio', action: 'productosServicio', id: servicio.id)}">
+							href="${createLink(controller: 'servicio', action: 'thread', id: servicio.id)}">
 							${servicio.nombre}
 						</a>
 					</div>

@@ -31,7 +31,7 @@ class ServicioController {
 		}
 	}
 	
-	def productosServicio(Long id){
+	def thread(Long id){
 		def servicioInstance = Servicio.get(id)
 		if (!servicioInstance) {
 			flash.message = message(code: 'default.not.found.message', args: [message(code: 'servicio.label', default: 'Servicio'), id])

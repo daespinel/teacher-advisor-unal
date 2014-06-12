@@ -1,5 +1,5 @@
 body {
-	background-color: #FFFFFF;
+	background-color: cornsilk;
 	display: block;
 	height: 100%;
 }
@@ -7,7 +7,7 @@ body {
 #body {
 	margin: 0 auto;
 	width: 1150px;
-	background-color: #D8D8D8;
+	background-color: #424242;
 	border-style: groove;
 	border-color: cadetblue;
 }
@@ -275,7 +275,7 @@ header#register {
 
 div#footer {
 	font-family: century gothic;
-	color: black;
+	color: whitesmoke;
 	font-size: initial;
 	font-style: oblique;
 	font-weight: 700;
@@ -381,6 +381,8 @@ header#verPerfil {
 	height: 390px;
 	background-color: darkgrey;
 	margin-left: 300px;
+	margin-bottom: 37;
+	margin-top: -18;
 }
 
 #paging {
@@ -410,9 +412,12 @@ header#verPerfil {
 }
 
 .caracteristica {
-	font-size: small;
+	font-size: smaller;
 	width: 80%;
 	margin-left: 10%;
+	font-weight: bold;
+	font-family: sans-serif;
+	font-style: italic;
 }
 
 /* MESSAGES AND ERRORS */
@@ -549,4 +554,28 @@ header#productosServicio {
 
 a.linkInside {
 	text-decoration: underline;
+}
+a.linkInsideSearch {
+    text-decoration: underline;
+    color: lavender;
+    font-family: fantasy;
+    font-size: larger;
+    font-weight: inherit;
+}
+div.resultadosContainer {
+    background: -webkit-linear-gradient(#2F5F9A, #54AAF6);
+    color: lemonchiffon;  font-family: georgia;  font-size: larger;
+}
+div.avisoContainer {
+    background-color: cornsilk;
+    font-size: larger;
+    font-family: cursive;
+    color: dimgrey;
+}
+div#paging {
+    background-color: cornsilk;  font-size: larger;  font-family: cursive;  color: dimgrey;
+}
+span.currentStep {
+    margin-right: 8;
+    margin-left: 8;
 }
