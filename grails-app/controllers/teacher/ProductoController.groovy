@@ -10,6 +10,26 @@ class ProductoController {
         redirect(action: "list", params: params)
     }
 
+	def thread(Long id){
+		Producto productoInstance = Producto.get(id)
+		if (!productoInstance) {
+			flash.message = message(code: 'default.not.found.message', args: [message(code: 'producto.label', default: 'Producto'), id])
+			redirect(action: "list")
+			return
+		}
+		if(productoInstance.resenas.size()>0){
+			def resenas= productoInstance.resenas.sort{it.valoracion};
+			def peorResena = resenas.get(0);
+			resenas = productoInstance.resenas.sort{-it.valoracion};
+			def mejorResena = resenas.get(0);
+
+			[productoInstance: productoInstance,mejorResena:mejorResena,peorResena:peorResena]
+		}else{
+			flash.message=message(code:"error.resenas.1")
+			redirect(controller:"Resena",action:"create")
+		}
+		
+	}
 	
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)

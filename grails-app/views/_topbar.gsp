@@ -11,7 +11,7 @@
 		</a>
 		<a href="/Teacher/resena/resenasUsuario" class="menuLink" id="misResenas"> ${message(code:'menu.item.2')}
 		</a>
-		<a href="/Teacher/resena/resenasUsuario" class="menuLink" id="indiceServicios"> ${message(code:'menu.item.3')}
+		<a href="/Teacher/servicio/lista" class="menuLink" id="indiceServicios"> ${message(code:'menu.item.3')}
 		</a>
 		<a href="/Teacher/usuario/salir" class="menuLink" id="logout">${message(code:'default.logout')}
 		</a>

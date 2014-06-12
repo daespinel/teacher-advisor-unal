@@ -9,7 +9,7 @@
 </head>
 <ckeditor:resources/>
 <title>
-	${message(code:'default.login')}
+	${message(code:'default.nuevaResena')}
 </title>
 </head>
 <body>

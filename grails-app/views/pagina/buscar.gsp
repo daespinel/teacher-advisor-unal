@@ -54,7 +54,7 @@
 							<g:set var="className"
 								value="${ClassUtils.getShortName(result.getClass())}" />
 							<g:set var="link"
-								value="${createLink(controller: className[0].toLowerCase() + className[1..-1], action: 'show', id: result.id)}" />
+								value="${createLink(controller: className[0].toLowerCase() + className[1..-1], action: 'thread', id: result.id)}" />
 							<div class="name">
 								<a href="${link}"> ${result.nombre?.encodeAsHTML()}
 								</a>

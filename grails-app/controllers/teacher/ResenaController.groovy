@@ -35,7 +35,7 @@ class ResenaController {
 		
 		Usuario userInstance = Usuario.get(session.usuario.id)
 		if(userInstance.resenas.size()>0){
-			[resenas:userInstance.resenas]
+			[resenas:userInstance.resenas,resenaCount:Resena.count()]
 		}else{
 			flash.message=message(code:"error.resenas.0")
 		}
