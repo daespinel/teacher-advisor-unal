@@ -55,25 +55,31 @@ class ResenaController {
 		])
 		redirect(action: "resenasUsuario", id: resenaInstance.id)*/
 		
-		if (verificarLenguajeService.buscarProfanidades(resenaInstance.getTexto())){
+		//if (verificarLenguajeService.buscarProfanidades(resenaInstance.getTexto())){
 			
-			if (!resenaInstance.save(flush: true)) {
-				render(view: "create", model: [resenaInstance: resenaInstance])
+		params.texto = verificarLenguajeService.buscarProfanidades(resenaInstance.getTexto())
+		
+		def resenaLegal = new Resena(params)
+		
+			if (!resenaLegal.save(flush: true)) {
+			//if (!resenaInstance.save(flush: true)) {
+				render(view: "create", model: [resenaLegal: resenaLegal])
 				return
 			}
 	
 			flash.message = message(code: 'default.created.message', args: [
 				message(code: 'resena.label', default: 'Resena'),
-				resenaInstance.id
+				//resenaInstance.id
+				resenaLegal.id
 			])
 			
 			redirect(action: "resenasUsuario", id: resenaInstance.id)
 		
-		}else{
+		/*}else{
 			flash.message=message(code:'error.profanidad')
 			render(view: "nueva")
 			return
-		}
+		}*/
 	}
 
 	def show(Long id) {

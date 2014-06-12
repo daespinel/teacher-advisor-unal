@@ -17,11 +17,14 @@ class VerificarLenguajeService {
 		
 		for (i in profan){
 			
-			pMatch = texto.findAll(i)
-			if (!pMatch.empty){
-				break
-			}
+			texto = texto.replaceAll(i,"**beep**")
+			
+			//pMatch = texto.findAll(i)
+			//if (!pMatch.empty){
+				//break
+			//}
 		}
-		return pMatch.empty
+		//return pMatch.empty
+		return texto
     }
 }
