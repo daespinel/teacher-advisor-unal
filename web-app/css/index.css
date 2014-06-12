@@ -547,6 +547,6 @@ header#productosServicio {
 	margin-bottom: 25;
 }
 
-span a.linkInside {
+a.linkInside {
 	text-decoration: underline;
 }
