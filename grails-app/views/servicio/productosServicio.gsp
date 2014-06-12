@@ -26,11 +26,18 @@
 					${flash.message = '' }
 				</div>
 			</g:if>
-			<header class="header" id="productosServicio">Productos del servicio: ${servicio.nombre} </header>
+			<header class="header" id="productosServicio">
+				Productos del servicio:
+				${servicio.nombre}
+			</header>
 			<div id="accordion">
 				<g:each in="${servicio.productos.sort{-it.id}}" var="producto">
-				<div><a class="insideLink" href="${createLink(controller: 'producto', action: 'thread', id: producto.id)}" >${producto.nombre}
-		</a></div>
+					<div>
+						<a class="insideLink"
+							href="${createLink(controller: 'producto', action: 'thread', id: producto.id)}">
+							${producto.nombre}
+						</a>
+					</div>
 					<div class="resenaVer" id="producto-${producto.id}">
 						<span> ${message(code:'producto.caracteristica.label',default:'Caracteristica:') }
 						</span> <span> ${producto.nombre}<br>
@@ -38,13 +45,15 @@
 						</span> <span> ${producto.descripcion}<br>
 						</span> <span> ${message(code:'producto.calificacion.label',default:'Calificacion:') }
 						</span> <span> ${producto.calificacion}<br>
-						</span>
-						<br>
+						</span> <br>
 					</div>
 				</g:each>
 			</div>
 			<g:render template="/footer" />
 		</div>
 	</div>
+	<script>
+		$(".insideLink").css("text-decoration", "underline")
+	</script>
 </body>
 </html>
