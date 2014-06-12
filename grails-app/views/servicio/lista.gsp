@@ -28,8 +28,12 @@
 			<header class="header" id="verServicios">Lista de Servicios</header>
 			<div id="accordion">
 				<g:each in="${servicios.sort{-it.id}}" var="servicio">
-				<div><a class="insideLink" href="${createLink(controller: 'servicio', action: 'productosServicio', id: servicio.id)}" >  ${servicio.nombre}
-		</a></div>
+					<div>
+						<a class="insideLink"
+							href="${createLink(controller: 'servicio', action: 'productosServicio', id: servicio.id)}">
+							${servicio.nombre}
+						</a>
+					</div>
 					<div class="resenaVer" id="servicio-${servicio.id}">
 						<span> ${message(code:'servicio.descripcion.label',default:'Descripcion:') }
 						</span> <span> ${servicio.descripcion}<br>
@@ -38,15 +42,16 @@
 						</span> <span> ${message(code:'servicio.tipo.label',default:'Tipo:') }
 						</span> <span> ${servicio.tipo}<br>
 						</span> <span> ${message(code:'servicio.calificacionPromedio.label',default:'Calificacion Promedio:') }
-						</span>
-						 <span> ${servicio.calificacion_promedio}<br>
-						</span>
-						<br>
+						</span> <span> ${servicio.calificacion_promedio}<br>
+						</span> <br>
 					</div>
 				</g:each>
 			</div>
 			<g:render template="/footer" />
 		</div>
 	</div>
+	<script>
+		$(".insideLink").css("text-decoration", "underline")
+	</script>
 </body>
 </html>
