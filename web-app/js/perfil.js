@@ -68,10 +68,17 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	$("#cambiarContrasena").click(function(){
-		$("#cambiarContrasenaInputs").toggle({
-			effect : "drop",
-			direction : "up",
-			duration : 400
+		$("#cambiarContrasenaInputs").dialog({
+			draggable : false,
+			resizable : false,
+			modal : true,
+			show : {
+				effect : "drop",
+				direction : "up",
+				duration : 400
+			},
+			width : "auto",
+			height : "auto"
 		});
 	});
 });

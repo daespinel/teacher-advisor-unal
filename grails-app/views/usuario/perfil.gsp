@@ -66,9 +66,12 @@
 								value="${message(code:'default.modificarLabel')}">
 							<input type="button" value="Cancelar" id="cancelar">
 						</g:form>
-						<input type="button" value="cambiar Contraseña"
+						<input type="button" value="${message(code:'default.cambiarContrasenaLabel')}"
 							id="cambiarContrasena"> <br>
-						<div id="cambiarContrasenaInputs">
+						
+					</fieldset>
+				</div>
+				<div id="cambiarContrasenaInputs" title="${message(code:'default.cambiarContrasenaLabel')}">
 							<form method="post" action="modificarContrasena">
 								<label> ${message(code:'default.contraseñaLabel')}:
 								</label> <input type="password" name="contrasenaMd" value="Modificar"
@@ -77,8 +80,6 @@
 									required> <br> <input type="submit" value="Enviar">
 							</form>
 						</div>
-					</fieldset>
-				</div>
 				<div id="imagenContainer">
 					<g:if test="${session.usuario?.imagenPerfil}">
 						<img id="imagenPerfil"
@@ -91,7 +92,7 @@
 					<div id="hintText">
 						${message(code:'default.hintImage')}
 					</div>
-					<div id="formularioImagen" title="Seleccionar Imagen de Perfil">
+					<div id="formularioImagen" title="${message(code:'default.hintImage')}">
 						<g:form action="guardarImagen" method="post"
 							enctype="multipart/form-data">
 							<p>

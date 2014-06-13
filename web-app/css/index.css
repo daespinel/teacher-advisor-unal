@@ -268,9 +268,8 @@ header#register {
 	/* width: 186px; */
 	text-align: center;
 	line-height: 2em;
-	font-family: lucida;
+	font-family: fantasy;
 	font-size: larger;
-	float: right;
 	margin: auto 5px;
 }
 
@@ -327,6 +326,7 @@ header#verPerfil {
 	width: 573;
 	height: 390px;
 	background-color: currentcolor;
+	background: #000000 url("images/ui-bg_loop_25_000000_21x21.png") 50% 50% repeat;
 	margin-left: 243px;
 	border-radius: 10%;
 	padding: 30;

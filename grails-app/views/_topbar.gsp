@@ -19,7 +19,7 @@
 		</a>
 		
 
-		<label id="usernamelabel">Bienvenido/a: ${session?.usuario?.nombreUsuario}
+		<label id="usernamelabel">${message(code:'default.bienvenidaLabel')}   ${session?.usuario?.nombreUsuario}
 		</label>
 	</g:if>
 	<g:else>
