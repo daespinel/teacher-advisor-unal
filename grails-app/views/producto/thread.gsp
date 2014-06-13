@@ -7,6 +7,7 @@
 <g:javascript library="jquery-ui" />
 <r:layoutResources />
 <script src="${resource(dir: 'js', file: 'producto.js')}"></script>
+<script src="${resource(dir: 'js', file: 'jquery.raty.js')}"></script>
 </head>
 <ckeditor:resources />
 <title>
@@ -35,8 +36,18 @@
 				<div id="containerDatos2">
 					<div id="calificacion">
 						Calificacion:
-						${productoInstance.calificacion}
+						<span id="star1" data-score=${productoInstance.calificacion} ></span>
+						
+						<script language="javascript">
+									$('#star1').raty({
+									path : '/Teacher/static/images/new',
+									readOnly : true,
+									score :function() {
+										return $(this).attr('data-score');
+									} });
+						</script>
 					</div>
+					
 				</div>
 			</div>
 
@@ -66,8 +77,6 @@
 								</span> <span> ${mejorResena.producto.servicio.nombre}<br>
 								</span> <span> ${message(code:'resena.producto.label',default:'Producto:') }
 								</span> <span> ${mejorResena.producto.nombre}<br>
-								</span> <span> ${message(code:'resena.valoracion.label',default:'Valoracion:') }
-								</span> <span> ${mejorResena.valoracion}<br>
 								</span> <span> ${message(code:'resena.texto.label',default:'Texto:') }
 								</span>
 								<ckeditor:editor name="editor.Best${mejorResena.id}">
@@ -76,7 +85,29 @@
 								<br>
 							</div>
 						</div>
-						<div id="tabs-2">Hola</div>
+						<div id="tabs-2">
+								<g:if test="${ mejorResena.usuario.anonimo}">
+									<span> Escrito por: Anónimo<br>
+									</span>
+								</g:if>
+								<g:else>
+									<span> Escrito por: ${mejorResena.usuario}<br>
+									</span>
+								</g:else>
+								<span> ${message(code:'resena.valoracion.label',default:'Valoracion:') }
+								</span> <span> ${mejorResena.valoracion}<br>
+								</span>
+								<span id="star2" data-score=${mejorResena.valoracion} ></span>
+						
+								<script language="javascript">
+									$('#star2').raty({
+									path : '/Teacher/static/images/new',
+									readOnly : true,
+									score :function() {
+										return $(this).attr('data-score');
+									} });
+								</script>
+						</div>
 					</div>
 				</div>
 				
@@ -105,8 +136,6 @@
 								</span> <span> ${peorResena.producto.servicio.nombre}<br>
 								</span> <span> ${message(code:'resena.producto.label',default:'Producto:') }
 								</span> <span> ${peorResena.producto.nombre}<br>
-								</span> <span> ${message(code:'resena.valoracion.label',default:'Valoracion:') }
-								</span> <span> ${peorResena.valoracion}<br>
 								</span> <span> ${message(code:'resena.texto.label',default:'Texto:') }
 								</span>
 								<ckeditor:editor name="editor.Worst${peorResena.id}">
@@ -115,7 +144,29 @@
 								<br>
 							</div>
 						</div>
-						<div id="tabsB-2">Hola</div>
+						<div id="tabsB-2">
+								<g:if test="${ peorResena.usuario.anonimo}">
+									<span> Escrito por: Anónimo<br>
+									</span>
+								</g:if>
+								<g:else>
+									<span> Escrito por: ${peorResena.usuario}<br>
+									</span>
+								</g:else>
+								<span> ${message(code:'resena.valoracion.label',default:'Valoracion:') }
+								</span> <span> ${peorResena.valoracion}<br>
+								</span> 
+								<span id="star3" data-score=${peorResena.valoracion} ></span>
+						
+								<script language="javascript">
+									$('#star3').raty({
+									path : '/Teacher/static/images/new',
+									readOnly : true,
+									score :function() {
+										return $(this).attr('data-score');
+									} });
+								</script>
+						</div>
 					</div>
 					
 				</div>
@@ -141,7 +192,17 @@
 						</span> <span> ${resena.producto.nombre}<br>
 						</span> <span> ${message(code:'resena.valoracion.label',default:'Valoracion:') }
 						</span> <span> ${resena.valoracion}<br>
-						</span> <span> ${message(code:'resena.texto.label',default:'Texto:') }
+						</span> <div id="star-${resena.id}" data-score=${productoInstance.calificacion} ></div>
+						
+						<script language="javascript">
+									$('#star-${resena.id}').raty({
+									path : '/Teacher/static/images/new',
+									readOnly : true,
+									score :function() {
+										return $(this).attr('data-score');
+									} });
+						</script>
+					 <span> ${message(code:'resena.texto.label',default:'Texto:') }
 						</span>
 						<ckeditor:editor name="editor.${resena.id}">
 							${resena.texto}
