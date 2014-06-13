@@ -12,7 +12,7 @@
 
 	<!-- entrada de usuarios -->
 	<div class="groupFields" id="entrar">
-		<header class="header">Entrar</header>
+		<header class="header" id="entrar">Entrar</header>
 			<fieldset class="form">
 				Nombre de Usuario:
 				<g:textField name="nombreUsuario" required value placeholder="Nombre de Usuario" onkeydown="enviarFormularioEntrada(event);" class="entrar"/>

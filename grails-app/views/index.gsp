@@ -71,7 +71,7 @@
 					<span>El servicio con mas productos: <br></span>
 					<g:if test="${Producto.getAll().size()>0 }">
 						<span><a
-							href="${createLink(controller:'producto',action:'thread',id:Servicio.getAll().max{it.productos.size()}.id)}">
+							href="${createLink(controller:'servicio',action:'thread',id:Servicio.getAll().max{it.productos.size()}.id)}">
 								${Servicio.getAll().max{it.productos.size()}.nombre}
 						</a> <br></span>
 					</g:if>

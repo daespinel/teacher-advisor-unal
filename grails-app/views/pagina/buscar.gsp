@@ -77,7 +77,7 @@
 								</g:if>
 								<g:else>
 									<g:paginate controller="pagina" action="buscar"
-										params="[textoBusqueda: params.textoBusqueda]"
+										params="[textoBusqueda: params.textoBusqueda,tipoBusqueda: params.tipoBusqueda]"
 										total="${searchResult.total}"
 										prev="${message(code:'default.anteriorPaginateLabel')} "
 										next=" ${message(code:'default.siguientePaginateLabel')}" />
