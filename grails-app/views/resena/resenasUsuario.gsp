@@ -34,7 +34,7 @@
 						<div>
 							${resena.titulo}
 						</div>
-						<div class="resenaVer" id="${session.usuario}-${resena.id}">
+						<div class="resenaVer" id="resena-${resena.id}">
 							<span> ${message(code:'resena.servicio.label',default:'Servicio:') }
 							</span> <span><a class="linkInside"
 								href="${createLink(controller: 'servicio', action: 'thread', id: resena.producto.servicio.id)}">

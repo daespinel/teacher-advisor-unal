@@ -62,7 +62,7 @@
 						</ul>
 						<div id="tabs-1">
 							
-							<div class="resenaVer2" id="${session.usuario}-${mejorResena.id}">
+							<div class="resenaVer2" id="mejorResena-${mejorResena.id}">
 								<span> ${mejorResena.titulo}<br>
 								</span>
 								<g:if test="${ mejorResena.usuario.anonimo}">
@@ -119,7 +119,7 @@
 							<li><a href="#tabsB-2">Calificación</a></li>
 						</ul>
 						<div id="tabsB-1">
-							<div class="resenaVer2" id="${session.usuario}-${peorResena.id}">
+							<div class="resenaVer2" id="peorResena-${peorResena.id}">
 								<span> ${peorResena.titulo}<br>
 								</span> 
 								<g:if test="${ peorResena.usuario.anonimo}">
@@ -177,7 +177,7 @@
 					<div>
 						${resena.titulo}
 					</div>
-					<div class="resenaVer" id="${session.usuario}-${resena.id}">
+					<div class="resenaVer" id="resena-${resena.id}">
 						<g:if test="${ resena.usuario.anonimo}">
 									<span> Escrito por: Anónimo<br>
 									</span>
