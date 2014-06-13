@@ -20,7 +20,9 @@ class UsuarioController {
 			//redireccionar a pagina home!!
 			redirect(uri: "/")
 			//render "exito al entrar yeahh baby"
-		}
+
+			
+					}
 	}
 	
 	def exists(){
@@ -163,10 +165,20 @@ class UsuarioController {
 	def modificarDatos(){
 		
 		def usuario=Usuario.get(session?.usuario?.id)
+
+
+		if(params.nuevoCorreo ==~ /[a-z]+@unal.edu.co/){
+
+			usuario.correo=params.nuevoCorreo
+		}else{
+			flash.message="El correo electronico debe ser @unal.edu.co y no puede contener numeros"
+			redirect(action: "perfil")
+			return
+		}
+
 		usuario.nombres=params.nuevoNombre
 		usuario.apellidos=params.nuevoApellido
-		usuario.correo=params.nuevoCorreo
-
+		
 		switch(params.anonimo){
 			case "verdadero":
 				usuario.anonimo=true

@@ -67,14 +67,15 @@ class ResenaController {
 				return
 			}
 	
-			flash.message = message(code: 'default.created.message', args: [
+			/*flash.message = message(code: 'default.created.message', args: [
 				message(code: 'resena.label', default: 'Resena'),
 				//resenaInstance.id
 				resenaLegal.id
-			])
+			])*/
+			flash.message=message(code: 'resena.creada')
 			
 			redirect(action: "resenasUsuario", id: resenaInstance.id)
-		
+			
 		/*}else{
 			flash.message=message(code:'error.profanidad')
 			render(view: "nueva")

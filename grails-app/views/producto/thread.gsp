@@ -53,7 +53,16 @@
 							
 							<div class="resenaVer2" id="${session.usuario}-${mejorResena.id}">
 								<span> ${mejorResena.titulo}<br>
-								</span> <span> ${message(code:'resena.servicio.label',default:'Servicio:') }
+								</span>
+								<g:if test="${ mejorResena.usuario.anonimo}">
+									<span> Escrito por: Anónimo<br>
+									</span>
+								</g:if>
+								<g:else>
+									<span> Escrito por: ${mejorResena.usuario}<br>
+									</span>
+								</g:else>
+								<span> ${message(code:'resena.servicio.label',default:'Servicio:') }
 								</span> <span> ${mejorResena.producto.servicio.nombre}<br>
 								</span> <span> ${message(code:'resena.producto.label',default:'Producto:') }
 								</span> <span> ${mejorResena.producto.nombre}<br>
@@ -81,7 +90,18 @@
 						<div id="tabsB-1">
 							<div class="resenaVer2" id="${session.usuario}-${peorResena.id}">
 								<span> ${peorResena.titulo}<br>
-								</span> <span> ${message(code:'resena.servicio.label',default:'Servicio:') }
+								</span> 
+								<g:if test="${ peorResena.usuario.anonimo}">
+									<span> Escrito por: Anónimo<br>
+									</span>
+								</g:if>
+								<g:else>
+									<span> Escrito por: ${peorResena.usuario}<br>
+									</span>
+								</g:else>
+								
+								
+								<span> ${message(code:'resena.servicio.label',default:'Servicio:') }
 								</span> <span> ${peorResena.producto.servicio.nombre}<br>
 								</span> <span> ${message(code:'resena.producto.label',default:'Producto:') }
 								</span> <span> ${peorResena.producto.nombre}<br>
@@ -107,6 +127,14 @@
 						${resena.titulo}
 					</div>
 					<div class="resenaVer" id="${session.usuario}-${resena.id}">
+						<g:if test="${ resena.usuario.anonimo}">
+									<span> Escrito por: Anónimo<br>
+									</span>
+								</g:if>
+								<g:else>
+									<span> Escrito por: ${resena.usuario}<br>
+									</span>
+								</g:else>
 						<span> ${message(code:'resena.servicio.label',default:'Servicio:') }
 						</span> <span> ${resena.producto.servicio.nombre}<br>
 						</span> <span> ${message(code:'resena.producto.label',default:'Producto:') }
