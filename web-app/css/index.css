@@ -1,7 +1,7 @@
 body {
-	background-color: cornsilk;
 	display: block;
 	height: 100%;
+	background-color: gainsboro;
 }
 
 #body {
@@ -13,12 +13,13 @@ body {
 }
 
 #news {
-	color: #FFFFFF;
 	width: 100%;
-	height: 180px;
+	height: 65px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	display: inline-flex;
+	color: lavender;  font-family: georgia;  font-size: larger;
+	text-align: center;
 }
 
 .news {
@@ -319,21 +320,25 @@ img#logoImage {
 
 /*perfil*/
 header#verPerfil {
-	margin-left: inherit;
+	margin-left: 495;
 }
 
 #perfilContainer {
-	width: 50%;
+	width: 573;
 	height: 390px;
-	background-color: darkgray;
-	margin-left: 300px;
+	background-color: currentcolor;
+	margin-left: 243px;
 	border-radius: 10%;
+	padding: 30;
+	display: inline-flex;
 }
 
 #datosContainer {
 	padding-top: 15%;
-	padding-left: 60px;
+	padding-left: 26px;
 	text-align: justify;
+	color: lavender;  font-family: georgia;  font-size: larger;
+	width: 291;
 }
 
 #datosContainer label {
@@ -352,7 +357,8 @@ header#verPerfil {
 	border-radius: 100%;
 	text-align: center;
 	float: right;
-	margin-top: 10%;
+	margin-top: 74;
+	margin-left: 55;
 }
 
 #formularioImagen {
@@ -361,8 +367,9 @@ header#verPerfil {
 
 #modificarDatosContainer {
 	padding-top: 30px;
-	padding-left: 30px;
-	text-align: justify;
+	padding-left: 26px;
+	text-align: justify;      
+	color: lavender;  font-family: georgia;  font-size: larger;  width: 291;
 }
 
 #modificarDatosContainer label {
@@ -578,4 +585,11 @@ div#paging {
 span.currentStep {
     margin-right: 8;
     margin-left: 8;
+}
+div#hintText {
+    color: lavender;  font-family: georgia;  font-size: larger;
+}
+.news a {
+    color: gold;
+    text-decoration: underline;
 }

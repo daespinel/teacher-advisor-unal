@@ -6,7 +6,7 @@ class ImagenService {
 		def file = request.getFile('imagen')
 		if(!file.empty){
 			def usuario=Usuario.get(session?.usuario?.id)
-			if(file.contentType=="image/jpeg"||file.contentType=="image/gif"){
+			if(file.contentType=="image/jpeg"||file.contentType=="image/gif" || file.contentType=="image/png"){
 				/*El tamaño esta en bytes*/
 				if(file.size<=3145728){
 					usuario.imagenPerfil=new Imagen(nombre: file.originalFilename ,

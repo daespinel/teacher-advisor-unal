@@ -26,30 +26,7 @@
 				</div>
 			</g:if>
 			<div id="perfilContainer">
-				<div id="imagenContainer">
-					<g:if test="${session.usuario?.imagenPerfil}">
-						<img id="imagenPerfil"
-							src="${g.createLink(controller:'usuario',action:'mostrarImagen')}">
-					</g:if>
-					<g:else>
-						<img id="imagenPerfil"
-							src="${resource(dir: 'images/usuario', file: 'imagenUsuario.jpg')}">
-					</g:else>
-					<div id="hintText">
-						${message(code:'default.hintImage')}
-					</div>
-					<div id="formularioImagen" title="Seleccionar Imagen de Perfil">
-						<g:form action="guardarImagen" method="post"
-							enctype="multipart/form-data">
-							<p>
-								<input name="imagen" type="file" />
-							</p>
-							<p>
-								<input type="submit" id="botonEnviar">
-							</p>
-						</g:form>
-					</div>
-				</div>
+				
 				<div id="datosContainer">
 					<fieldset>
 						<label> ${message(code:'default.nombreLabel')}:
@@ -101,6 +78,30 @@
 							</form>
 						</div>
 					</fieldset>
+				</div>
+				<div id="imagenContainer">
+					<g:if test="${session.usuario?.imagenPerfil}">
+						<img id="imagenPerfil"
+							src="${g.createLink(controller:'usuario',action:'mostrarImagen')}">
+					</g:if>
+					<g:else>
+						<img id="imagenPerfil"
+							src="${resource(dir: 'images/usuario', file: 'imagenUsuario.jpg')}">
+					</g:else>
+					<div id="hintText">
+						${message(code:'default.hintImage')}
+					</div>
+					<div id="formularioImagen" title="Seleccionar Imagen de Perfil">
+						<g:form action="guardarImagen" method="post"
+							enctype="multipart/form-data">
+							<p>
+								<input name="imagen" type="file" />
+							</p>
+							<p>
+								<input type="submit" id="botonEnviar">
+							</p>
+						</g:form>
+					</div>
 				</div>
 				<br>
 				<!--
