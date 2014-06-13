@@ -31,7 +31,7 @@ class Producto {
 		this.resenas.each(){res->total=total+res.getValoracion();contador++}
 		if(contador!=0){
 			promedio=total/contador}
-		this.calificacion=promedio
+		this.calificacion=promedio.round(1)
 	}
 
 }
