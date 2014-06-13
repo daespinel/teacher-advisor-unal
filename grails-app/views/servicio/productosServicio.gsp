@@ -7,7 +7,7 @@
 <r:layoutResources />
 <script src="${resource(dir: 'js', file: 'index.js')}"></script>
 <script src="${resource(dir: 'js', file: 'servicios.js')}"></script>
-
+<script src="${resource(dir: 'js', file: 'jquery.raty.js')}"></script>
 </head>
 <title>
 	${message(code:'default.productos.servicio')}
@@ -44,8 +44,13 @@
 						</span> <span> ${message(code:'producto.descripcion.label',default:'Descripcion:') }
 						</span> <span> ${producto.descripcion}<br>
 						</span> <span> ${message(code:'producto.calificacion.label',default:'Calificacion:') }
-						</span> <span> ${producto.calificacion}<br>
-						</span> <br>
+						</span> <div id="star-${producto.id}" data-score=${producto.calificacion} data-score-name="${producto.id}" ></div>
+						<script language="javascript">
+							$('#star-${producto.id}').raty({
+							path: '/Teacher/static/images/new',readOnly:true,score: function() {
+		    				return $(this).attr('data-score');
+		  					}})	;
+						</script><br>
 					</div>
 				</g:each>
 			</div>

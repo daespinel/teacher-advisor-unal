@@ -49,7 +49,7 @@
 							path: '/Teacher/static/images/new',readOnly:true,score: function() {
 		    				return $(this).attr('data-score');
 		  					}})	;
-	</script><br>
+						</script><br>
 						 <br>
 					</div>
 				</g:each>
