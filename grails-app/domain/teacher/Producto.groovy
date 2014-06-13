@@ -15,7 +15,7 @@ class Producto {
 
 	static constraints = {
 		nombre(size:5..99,nullable:false)
-		caracteristica(size:10..30,nullable:true)
+		caracteristica(size:10..60,nullable:true)
 		descripcion(maxSize:1000,nullable:true)
 
 	}
