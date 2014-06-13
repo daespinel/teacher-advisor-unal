@@ -14,7 +14,7 @@
       return this.each(function() {
         methods.destroy.call(this);
 
-        this.opt = $.extend(true, {}, $.fn.raty.defaults, settings);
+        this.opt = $.extend(true, {}, $.fn.raty.defaults, settings, $(this).data());
 
         var that  = $(this),
             inits = ['number', 'readOnly', 'score', 'scoreName'];

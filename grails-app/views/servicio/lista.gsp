@@ -7,6 +7,7 @@
 <r:layoutResources />
 <script src="${resource(dir: 'js', file: 'index.js')}"></script>
 <script src="${resource(dir: 'js', file: 'servicios.js')}"></script>
+<script src="${resource(dir: 'js', file: 'jquery.raty.js')}"></script>
 </head>
 <title>
 	${message(code:'default.servicios')}
@@ -42,8 +43,14 @@
 						</span> <span> ${message(code:'servicio.tipo.label',default:'Tipo:') }
 						</span> <span> ${servicio.tipo}<br>
 						</span> <span> ${message(code:'servicio.calificacionPromedio.label',default:'Calificacion Promedio:') }
-						</span> <span> ${servicio.calificacion_promedio}<br>
-						</span> <br>
+						</span> <div id="star-${servicio.id}" data-score=${servicio.calificacion_promedio} data-score-name="${servicio.id}" ></div>
+						<script language="javascript">
+							$('#star-${servicio.id}').raty({
+							path: '/Teacher/static/images/new',readOnly:true,score: function() {
+		    				return $(this).attr('data-score');
+		  					}})	;
+						</script><br>
+						 <br>
 					</div>
 				</g:each>
 			</div>
@@ -52,6 +59,12 @@
 	</div>
 	<script>
 		$(".insideLink").css("text-decoration", "underline")
+	</script>
+	<script language="javascript">
+		$('#star').raty({
+		path: '/Teacher/static/images/new',readOnly:true,score: function() {
+		    return $(this).attr('data-score');
+		  }})	;
 	</script>
 </body>
 </html>
