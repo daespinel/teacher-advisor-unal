@@ -31,7 +31,7 @@ class Servicio {
 		this.productos.each(){prod->total=total+prod.getCalificacion();contador++}
 		if(contador!=0){
 			promedio=total/contador}
-		this.calificacion_promedio=promedio
+		this.calificacion_promedio=promedio.round(1)
 	}
 
 }
