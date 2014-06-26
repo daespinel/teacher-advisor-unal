@@ -35,7 +35,7 @@ class BootStrap {
 			/(?i)(\s)?fufa(\s)?/,
 			/(?i)(\s)?retrasado(\s)?/,
 			/(?i)(\s)?pajazo(\s)?/,
-			/(?i)(\s)?gurrupleta(\s)?/,
+			/(?i)(\s)?gurrupleta(\s)?/
 		]
 		for( i in profan){
 			if(Profanidad.findAllByValue(i.toString()).size() == 0){

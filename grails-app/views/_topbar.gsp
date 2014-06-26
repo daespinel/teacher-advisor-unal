@@ -1,7 +1,7 @@
 <div class="header" id="toplinks">
 	<div id="logoHeader">
 		<a href="/Teacher" id="inicio"><img
-			src="<g:resource dir='images/new' file='logo.png' />" width="100%"
+			src="<g:resource dir='images/new' file='home.png' />" width="100%"
 			height="100%" /> </a>
 
 	</div>
