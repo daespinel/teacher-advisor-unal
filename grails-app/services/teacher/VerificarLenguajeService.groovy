@@ -44,18 +44,19 @@ class VerificarLenguajeService {
 		]
 
 		List pMatch = []
-
-		for (i in profan){
-			println i
-			pMatch = texto.findAll(i)
-			println pMatch
-			texto = texto.replaceAll(i,"****")
-
-
-			//if (!pMatch.empty){
-			//break
-			//}
+		def tokens = texto.findAll(/(>).+?(<)/);
+		for(String token in tokens){
+			for (i in profan){
+				if(token.find(i)){
+					texto = texto.replaceFirst(token,">****<")
+				}
+			
+				//if (!pMatch.empty){
+				//break
+				//}
+			}
 		}
+
 		//return pMatch.empty
 		return texto
 	}
